@@ -14,10 +14,9 @@ use App\Livewire\OrderDetail;
 use App\Livewire\Product;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OrderExportController;
+use App\Livewire\AppHome;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', AppHome::class)->name('app.home');
 
 // Oauth
 Route::group(['middleware' => 'web'], function () {
