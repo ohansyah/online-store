@@ -1,0 +1,41 @@
+{
+    "success": "Berhasil",
+    "success_add": "Berhasil Menambahkan",
+    "success_edit": "Berhasil Memperbarui",
+    "success_delete": "Berhasil Menghapus",
+    "success_checkout": "Berhasil Membuat Pesanan Baru",
+    "failed": "Gagal",
+    "failed_edit": "Gagal Memperbarui",
+    "failed_delete": "Gagal Menghapus",
+    "failed_checkout": "Gagal Membuat Pesanan Baru",
+
+    "View": "Lihat",
+    "Edit": "Ubah",
+    "Delete": "Hapus",
+
+    "category": "Kategori",
+    "category_add": "Tambah Kategori Baru",
+    "category_edit": "Edit Kategori",
+    "category_delete": "Hapus Kategori",
+
+    "product": "Produk",
+    "product_add": "Tambah Produk Baru",
+    "product_edit": "Edit Produk",
+    "product_delete": "Hapus Produk",
+
+    "order": "Order",
+    "order_show": "Detail Order",
+    
+    "auth.failed": "Kata sandi atau Email tidak sesuai.",
+    "auth.password": "Kata sandi yang diberikan salah.",
+    "auth.throttle": "Terlalu banyak percobaan login. Silakan coba lagi dalam :seconds detik.",
+
+    "general_setting": "Pengaturan Umum",
+    "general_setting_company_title": "Pengaturan Umum Usaha",
+    "general_setting_company_description": "Pengaturan Nama Usaha dan Alamat Usaha",
+    "company_name": "Nama Usaha",
+    "company_address_line_1": "Alamat Usaha",
+    "company_address_line_2": "Alamat Detail",
+
+    "validation.required": "Kolom :attribute harus diisi."
+}
