@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OrderExportController;
 
 Route::get('/', function () {
-    return redirect()->route('cashier.index');
+    return view('welcome');
 });
 
 // Oauth
@@ -29,7 +29,7 @@ Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified',
-])->group(function () {
+])->prefix('admin')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::get('/product', Product::class)->name('product.index');
