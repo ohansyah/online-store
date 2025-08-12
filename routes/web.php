@@ -17,6 +17,22 @@ use App\Http\Controllers\OrderExportController;
 use App\Livewire\AppHome;
 
 Route::get('/', AppHome::class)->name('app.home');
+Route::get('/promo', function() {
+    return json([
+        'message' => 'Welcome to the Promo Page!'
+    ]);
+} )->name('app.promo');
+Route::get('/delivery', function() {
+    return json([
+        'message' => 'Welcome to the delivery Page!'
+    ]);
+} )->name('app.delivery');
+Route::get('/info', function() {
+    return json([
+        'message' => 'Welcome to the info Page!'
+    ]);
+} )->name('app.info');
+
 
 // Oauth
 Route::group(['middleware' => 'web'], function () {
