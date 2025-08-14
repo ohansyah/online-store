@@ -1,7 +1,7 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100 fixed top-0 left-0 right-0 z-50">
+<nav x-data="{ open: false }" class="bg-gray-100 fixed top-0 left-0 right-0 z-50">
     
     <!-- Primary Navigation Menu -->
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-white border-b border-gray-100 max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             
             <div class="flex flex-auto justify-between items-center h-16">
@@ -26,8 +26,7 @@
                 </div>
             </div>
 
-
-            <div class="hidden sm:flex sm:items-center sm:ms-6">
+            <div class="flex items-center ms-6 sm:hidden">
                 @if (Auth::check())
                     <!-- Settings Dropdown -->
                     <div class="ms-3 relative">
