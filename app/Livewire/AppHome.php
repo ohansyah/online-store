@@ -8,6 +8,6 @@ class AppHome extends Component
 {
     public function render()
     {
-        return view('livewire.app-home')->layout('layouts.guest');
+        return view('livewire.app-home')->layout('layouts.mobile');
     }
 }
