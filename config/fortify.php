@@ -73,7 +73,8 @@ return [
     |
     */
 
-    'home' => '/cashier',
+    // 'home' => '/cashier',
+    'home' => 'dashboard',
 
     /*
     |--------------------------------------------------------------------------
@@ -86,7 +87,7 @@ return [
     |
     */
 
-    'prefix' => '',
+    'prefix' => 'admin',
 
     'domain' => null,
 
