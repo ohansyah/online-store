@@ -73,7 +73,6 @@ return [
     |
     */
 
-    // 'home' => '/cashier',
     'home' => 'dashboard',
 
     /*

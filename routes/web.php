@@ -5,7 +5,6 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GeneralSettingController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OauthController;
-use App\Livewire\Cashier;
 use App\Livewire\Category;
 use App\Livewire\Forms\CategoryForm;
 use App\Livewire\Forms\ProductForm;
@@ -56,8 +55,6 @@ Route::middleware([
     Route::get('/category/create', CategoryForm::class)->name('category.create');
     Route::get('/category/edit/{categoryId}', CategoryForm::class)->name('category.edit');
     Route::delete('/category/delete/{categoryId}', [CategoryController::class, 'delete'])->name('category.delete');
-
-    Route::get('/cashier', Cashier::class)->name('cashier.index');
 
     Route::get('/order', Order::class)->name('order.index');
     Route::get('/order/{id}', OrderDetail::class)->name('order.show');

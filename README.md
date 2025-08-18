@@ -24,7 +24,7 @@ Follow these steps to set up your Laravel 10 project with Jetstream and Vite:
 1. **Clone the Repository**
    ```bash
    git clone https://github.com/ohansyah/online-store.git
-   cd cashier
+   cd online-store
 2. **Install Composer Dependencies**
    ```bash
    composer install
@@ -60,4 +60,4 @@ Follow these steps to set up your Laravel 10 project with Jetstream and Vite:
     ```bash
     php artisan serve
 10. **Access Your Application**
-Open your web browser and visit http://localhost:8000 to access cashier project.
+Open your web browser and visit http://localhost:8000 to access online store project.
