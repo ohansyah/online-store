@@ -47,7 +47,6 @@ class ProductFactory extends Factory
             'barcode' => $this->faker->unique()->randomNumber(8),
             'description' => $this->faker->realText(200),  // More realistic description length
             'price' => $this->faker->randomNumber(2) * 100,
-            'stock' => $this->faker->numberBetween(10, 100),  // Random stock between 10 and 200
             'image' => 'products/box.png',
             'is_active' => $this->faker->boolean(80),  // 80% chance of being active
             'category_id' => $categoryId,
