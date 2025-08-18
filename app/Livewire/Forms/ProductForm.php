@@ -19,7 +19,6 @@ class ProductForm extends Component
     public string $description;
     public string $name;
     public float $price;
-    public int $stock;
     public int $is_active = 1;
     public $image;
     public $imagePreview;
@@ -33,7 +32,6 @@ class ProductForm extends Component
         'name' => 'required|min:3|max:255',
         'description' => 'required|max:1000',
         'price' => 'required|numeric|min:1',
-        'stock' => 'required|numeric|min:0',
         'is_active' => 'required|in:0,1',
     ];
 
@@ -48,7 +46,6 @@ class ProductForm extends Component
             $this->description = $product->description;
             $this->category_id = $product->category_id;
             $this->price = $product->price;
-            $this->stock = $product->stock;
             $this->is_active = $product->is_active;
             $this->imagePreview = asset('storage/' . $product->image);
         }
@@ -76,7 +73,6 @@ class ProductForm extends Component
         $product->description = $this->description;
         $product->category_id = $this->category_id;
         $product->price = $this->price;
-        $product->stock = $this->stock;
         $product->is_active = $this->is_active;
 
         // optional change image

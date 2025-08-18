@@ -39,8 +39,6 @@ class ProductTable extends DataTableComponent
                 ->searchable(),
             Column::make("Price", "price")
                 ->sortable(),
-            Column::make("Stock", "stock")
-                ->sortable(),
             Column::make("Category", "category.name")
                 ->sortable(),
             BooleanColumn::make("Is Active", "is_active")
