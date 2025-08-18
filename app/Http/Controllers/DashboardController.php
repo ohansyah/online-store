@@ -2,29 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Charts\OrderOverviewChart;
-use App\Models\Order;
-use App\Models\OrderProduct;
+use App\Models\Product;
+use App\Models\Category;
 
 class DashboardController extends Controller
 {
-    public function index(OrderOverviewChart $chart)
+    public function index()
     {
-        // sum orders.total today
-        $sumOrderTotalToday = (int) Order::whereDate('created_at', now())->sum('total');
-
-        // count orders today
-        $countOrderToday = (int) Order::whereDate('created_at', now())->count();
-
-        // count orders product today
-        $countOrderProductToday = (int) OrderProduct::whereDate('created_at', now())->count();
-
-        // format currency
-        $sumOrderTotalToday = formatCurrency($sumOrderTotalToday);
+        /**
+         * Dashboard Overview
+         * count product
+         * count category
+         * count banner
+         */
 
         return view('dashboard', [
-            'card' => compact('sumOrderTotalToday', 'countOrderToday', 'countOrderProductToday'),
-            'chart' => $chart->build(),
+            
         ]);
     }
 }

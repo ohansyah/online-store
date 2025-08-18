@@ -16,7 +16,7 @@ class GeneralSettingSeeder extends Seeder
         GeneralSetting::insert([
             [
                 'key' => 'app_name',
-                'value' => 'Laravel E-commerce',
+                'value' => 'Laravel Online Store',
                 'created_at' => $createdAt,
                 'updated_at' => $createdAt,
             ], [
@@ -26,7 +26,7 @@ class GeneralSettingSeeder extends Seeder
                 'updated_at' => $createdAt,
             ], [
                 'key' => 'company_name',
-                'value' => 'PT. Laravel E-commerce Indonesia',
+                'value' => 'PT. Laravel Online Store Indonesia',
                 'created_at' => $createdAt,
                 'updated_at' => $createdAt,
             ], [

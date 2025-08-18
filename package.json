@@ -10,6 +10,7 @@
         "@tailwindcss/typography": "^0.5.10",
         "autoprefixer": "^10.4.16",
         "axios": "^1.6.4",
+        "daisyui": "^5.0.50",
         "laravel-vite-plugin": "^1.0",
         "postcss": "^8.4.32",
         "puppeteer": "^24.6.1",

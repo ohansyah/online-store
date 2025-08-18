@@ -19,10 +19,19 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+                brand: {
+                    lightest: '#E7E1CA',
+                    lighter: '#CEA972',
+                    darker: '#9E7A48',
+                    darkest: '#29201E',
+                },
+            },
         },
     },
 
     plugins: [
+        require('daisyui'),
         forms,
         typography,
         function ({ addUtilities }) {
@@ -39,6 +48,4 @@ export default {
                 },
             });
         },],
-
-    darkMode: 'class', // This specifies that Tailwind should look at Class elements to determine dark mode
 };

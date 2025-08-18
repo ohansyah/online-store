@@ -15,6 +15,7 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @vite('resources/js/auto-slide.js')
 
         <!-- Styles -->
         @livewireStyles
@@ -23,9 +24,10 @@
         <x-banner />
 
         <div class="min-h-screen bg-gray-100">
+            @livewire('app.navigation-menu')
 
             <!-- Page Content -->
-            <main>
+            <main class="max-w-xl mx-auto mt-16">
                 {{ $slot }}
             </main>
         </div>

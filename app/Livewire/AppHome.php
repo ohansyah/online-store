@@ -4,10 +4,10 @@ namespace App\Livewire;
 
 use Livewire\Component;
 
-class Order extends Component
+class AppHome extends Component
 {
     public function render()
     {
-        return view('livewire.order');
+        return view('livewire.app-home')->layout('layouts.mobile');
     }
 }
