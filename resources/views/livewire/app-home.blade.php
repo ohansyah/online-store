@@ -60,7 +60,7 @@
             </div>
 
             <!-- Product list -->
-            <div class="group overflow-x-auto flex gap-5">
+            <div class="group overflow-x-auto flex gap-5 no-scrollbar">
                 @for ($i = 0; $i < 7; $i++)
                     <div class="w-32 flex-shrink-0 flex flex-col gap-2">
                         <!-- Image -->
@@ -90,17 +90,14 @@
                 <p class="text-base font-medium text-brand-darkest">Categories</p>
             </div>
 
-            <!-- Product list -->
-            <div class="group overflow-x-auto flex gap-2">
-                @for ($i = 0; $i < 7; $i++)
-                    <div class="w-24 flex-shrink-0 flex flex-col gap-2 p-2 rounded-xl">
-                        <!-- Image -->
-                        <div class="relative h-24 rounded-xl overflow-hidden">
-                            <img src="{{ asset('storage/categories/furniture.png') }}" alt="Aesthetic Lamp"
-                                class="w-full h-full object-cover" />
+            <div class="group overflow-x-auto flex gap-2 no-scrollbar">
+                @foreach ( $categories as $category)
+                    <div class="w-24 h-24 flex-shrink-0 flex flex-col gap-2 p-2 rounded-xl">
+                        <div class="relative rounded-xl overflow-hidden">
+                            <img src="{{ $category['image_url'] }}" alt="{{ $category['name'] }}" class="w-full h-full object-cover" />
                         </div>
                     </div>
-                @endfor
+                @endforeach
             </div>
         </div>
 
