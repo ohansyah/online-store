@@ -60,7 +60,7 @@
             </div>
 
             <!-- Product list -->
-            <div class="group overflow-x-auto flex gap-5">
+            <div class="group overflow-x-auto flex gap-5 no-scrollbar">
                 @for ($i = 0; $i < 7; $i++)
                     <div class="w-32 flex-shrink-0 flex flex-col gap-2">
                         <!-- Image -->
@@ -83,6 +83,8 @@
                 @endfor
             </div>
         </div>
+
+        <livewire:app.category />
 
         <!-- Products -->
         <div class="pb-8">
