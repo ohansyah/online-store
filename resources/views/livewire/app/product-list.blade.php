@@ -3,19 +3,21 @@
     <!-- Product list -->
     <div class="grid grid-cols-2 gap-4 pr-1">
         @foreach ($products as $product)
-            <div class="flex flex-col gap-2">
+            <div class="flex flex-col gap-2 cursor-pointer overflow-hidden">
 
-                <div class="relative h-64 rounded-xl overflow-hidden">
+                <div class="relative h-64 rounded-xl overflow-hidden border-2 border-white hover:border-brand-lighter transition duration-200 ease-out">
                     <img src="{{ $product->image_url }}" alt="{{ $product->name }}" class="w-full h-full object-cover" />
                 </div>
 
-                <p class="text-sm font-medium text-brand-darkest">
-                    {{ $product->name }}
-                </p>
-
-                <div class="flex items-center gap-2">
-                    <span class="text-sm font-medium text-brand-darker">{{ $product->price_formatted }}</span>
+                <div>
+                    <p class="text-sm font-medium text-brand-darkest">
+                        {{ $product->name }}
+                    </p>
+                    <div class="flex items-center gap-2">
+                        <span class="text-sm font-medium text-brand-darker">{{ $product->price_formatted }}</span>
+                    </div>
                 </div>
+
             </div>
         @endforeach
     </div>
@@ -24,7 +26,7 @@
         @if ($hasMorePages)
             <div class="text-center">
                 <div wire:loading wire:target="loadMore">
-                    @svg('css-spinner', 'w-8 h-8 object-cover rounded-full mr-2 animate-spin text-indigo-500')
+                    @svg('css-spinner', 'w-8 h-8 object-cover rounded-full mr-2 animate-spin text-brand-lighter')
                 </div>
             </div>
         @endif
