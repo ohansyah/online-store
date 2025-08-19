@@ -17,7 +17,20 @@ class DashboardController extends Controller
          */
 
         return view('dashboard', [
-            
+            'stats' => [
+                [
+                    'title' => 'Products',
+                    'count' => Product::count(),
+                ],
+                [
+                    'title' => 'Categories',
+                    'count' => Category::count(),
+                ],
+                [
+                    'title' => 'Banners',
+                    'count' => 0, // Assuming no banners for now
+                ]
+            ]
         ]);
     }
 }
