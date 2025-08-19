@@ -1,0 +1,41 @@
+{
+    "success": "Success",
+    "success_add": "Successfully Added",
+    "success_edit": "Successfully Updated",
+    "success_delete": "Successfully Deleted",
+    "success_checkout": "Successfully Created a New Order",
+    "failed": "Failed",
+    "failed_edit": "Failed to Update",
+    "failed_delete": "Failed to Delete",
+    "failed_checkout": "Failed to Create a New Order",
+
+    "View": "View",
+    "Edit": "Edit",
+    "Delete": "Delete",
+
+    "category": "Category",
+    "category_add": "Add New Category",
+    "category_edit": "Edit Category",
+    "category_delete": "Delete Category",
+
+    "product": "Product",
+    "product_add": "Add New Product",
+    "product_edit": "Edit Product",
+    "product_delete": "Delete Product",
+
+    "order": "Order",
+    "order_show": "Order Details",
+    
+    "auth.failed": "The provided password or email is incorrect.",
+    "auth.password": "The provided password is incorrect.",
+    "auth.throttle": "Too many login attempts. Please try again in :seconds seconds.",
+
+    "general_setting": "General Settings",
+    "general_setting_company_title": "Business General Settings",
+    "general_setting_company_description": "Business Name and Address Settings",
+    "company_name": "Business Name",
+    "company_address_line_1": "Business Address",
+    "company_address_line_2": "Detailed Address",
+
+    "validation.required": "The :attribute field is required."
+}
