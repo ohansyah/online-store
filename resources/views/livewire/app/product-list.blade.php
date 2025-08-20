@@ -1,10 +1,9 @@
 <div>
 
     <!-- Product list -->
-    <div class="grid grid-cols-2 gap-4 pr-1">
+    <div class="grid grid-cols-2 gap-4">
         @foreach ($products as $product)
-            <div class="flex flex-col gap-2 cursor-pointer overflow-hidden">
-
+            <a href="{{ route('app.product.detail', ['id' => $product->id]) }}" class="flex flex-col gap-2 cursor-pointer overflow-hidden">
                 <div class="relative h-64 rounded-xl overflow-hidden border-2 border-white hover:border-brand-lighter transition duration-200 ease-out">
                     <img src="{{ $product->image_url }}" alt="{{ $product->name }}" class="w-full h-full object-cover" />
                 </div>
@@ -17,8 +16,7 @@
                         <span class="text-sm font-medium text-brand-darker">{{ $product->price_formatted }}</span>
                     </div>
                 </div>
-
-            </div>
+            </a>
         @endforeach
     </div>
 

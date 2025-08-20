@@ -9,9 +9,19 @@ use App\Livewire\Category;
 use App\Livewire\Forms\CategoryForm;
 use App\Livewire\Forms\ProductForm;
 use App\Livewire\Product;
+use App\Livewire\App\ProductDetail;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', AppHome::class)->name('app.home');
+Route::middleware([
+    'web',
+])->group(function () {
+    Route::get('/', AppHome::class)->name('app.home');
+
+    Route::group(['prefix' => 'product'], function () {
+        Route::get('/{id}', ProductDetail::class)->name('app.product.detail');
+    });
+});
+
 Route::get('/promo', function () {
     return json([
         'message' => 'Welcome to the Promo Page!',
