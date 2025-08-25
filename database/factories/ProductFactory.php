@@ -69,11 +69,8 @@ class ProductFactory extends Factory
                 'Bangku Bar Silinder',
             ],
             'Lainnya' => [
-                'Mimbar Masjid Kubah',
-                'Partisi Gebyok 4 Panel',
-                'Pigura Kaligrafi Arabesque',
-                'Jam Hias Grandfather',
-                'Patung Garuda',
+                'Wrist Rest Mindi',
+                'Wrist Rest Jati',
             ],
         ];
 

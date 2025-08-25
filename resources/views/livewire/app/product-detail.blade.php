@@ -1,6 +1,6 @@
 <div class="bg-white p-6">
-    <div class="card bg-base-100 w-full h-auto shadow-md">
-        <figure class="aspect-[3/4] w-full overflow-hidden">
+    <div class="card bg-base-100 w-full aspect-[3/4] overflow-hidden shadow-md">
+        <figure>
             <img src="{{ $product->image_url }}" alt="{{ $product->name }}" />
         </figure>
         <div class="card-body">
