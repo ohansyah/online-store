@@ -77,10 +77,25 @@ class ProductFactory extends Factory
             ],
         ];
 
+        $productImages = [
+            "Kursi"=> "default/products/chair.webp",
+            "Meja"=> "default/products/table.webp",
+            "Pintu"=> "default/products/door.webp",
+            "Lemari"=> "default/products/wardrobe.webp",
+            "Tempat Tidur"=> "default/products/bed-frame.webp",
+            "Dapur"=> "default/products/kitchen-set.webp",
+            "Lainnya"=> "default/products/wrist-rest.webp",
+        ];
+
         // pick random category and product name
         $categoryName = $this->faker->randomElement(array_keys($categories));
         $categoryId = $categories[$categoryName];
         $productName = $this->faker->randomElement($productsByCategory[$categoryName]);
+        if (isset($productImages[$categoryName])) {
+            $imagePath = $productImages[$categoryName];
+        } else {
+            $imagePath = 'default/products/lamp.png'; // default image
+        }
 
         return [
             'name' => $productName,
@@ -88,7 +103,7 @@ class ProductFactory extends Factory
             'barcode' => $this->faker->unique()->randomNumber(8),
             'description' => $this->faker->realText(200),  // More realistic description length
             'price' => $this->faker->randomNumber(2) * 100,
-            'image' => 'products/box.png',
+            'image' => $imagePath,
             'is_active' => $this->faker->boolean(80),  // 80% chance of being active
             'category_id' => $categoryId,
         ];
