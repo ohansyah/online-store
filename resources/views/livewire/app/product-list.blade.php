@@ -1,13 +1,13 @@
 <div>
 
     <!-- Product list -->
-    <div class="grid grid-cols-2 gap-4">
+    <div class="grid grid-cols-2 gap-3">
         @foreach ($products as $product)
-            <a href="{{ route('app.product.detail', ['id' => $product->id]) }}" class="group card relative w-64 h-80 flex-shrink-0 flex-col gap-1 overflow-hidden cursor-pointer">
+            <a href="{{ route('app.product.detail', ['id' => $product->id]) }}" class="group card relative w-full h-full flex-shrink-0 flex-col gap-1 overflow-hidden cursor-pointer">
                 
                 <!-- Image -->
                 <figure class="w-full h-full">
-                    <img src="{{ $product->image_url }}" alt="{{ $product->name }}" class="w-64 h-80 object-cover transition-transform duration-300" />
+                    <img src="{{ $product->image_url }}" alt="{{ $product->name }}" class="w-full h-full object-cover transition-transform duration-300" />
                 </figure>
 
                 <!-- Hidden Card Body (slide up on hover) -->

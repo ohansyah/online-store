@@ -56,12 +56,18 @@
         <div class="pb-8">
             <div class="flex justify-between items-center w-full mb-2">
                 <p class="text-base font-medium text-brand-darkest">Popular</p>
-                <p class="text-xs text-brand-darker cursor-pointer">See all</p>
+                <p class="text-xs font-medium text-brand-darker cursor-pointer">See all</p>
             </div>
             <livewire:app.product-section />
         </div>
 
-        <livewire:app.category />
+        <!-- Categories -->
+        <div class="pb-8">
+            <div class="flex justify-between items-center w-full mb-2">
+                <p class="text-base font-medium text-brand-darkest">Categories</p>
+            </div>
+            <livewire:app.category />
+        </div>
 
         <div class="pb-8">
             <div class="flex justify-between items-center w-full mb-2">

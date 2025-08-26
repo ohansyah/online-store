@@ -1,16 +1,22 @@
-<!-- Categories -->
 <div class="pb-8">
-    <div class="flex justify-between items-center w-full mb-2">
-        <p class="text-base font-medium text-brand-darkest">Categories</p>
-    </div>
+    <div class="overflow-x-auto flex gap-2 no-scrollbar">
+        @foreach ($categories as $category)
+            <a href="#" class="group card relative w-24 h-24 flex-shrink-0 overflow-hidden cursor-pointer">
 
-    <div class="group overflow-x-auto flex gap-2 no-scrollbar">
-        @foreach ( $categories as $category)
-            <div class="w-24 h-24 flex-shrink-0 flex flex-col gap-2 p-2 rounded-xl border-2 border-white hover:border-brand-lighter transition duration-200 ease-out cursor-pointer">
-                <div class="relative rounded-xl overflow-hidden">
-                    <img src="{{ $category['image_url'] }}" alt="{{ $category['name'] }}" class="w-full h-full object-cover" />
+                <!-- Image -->
+                <figure class="w-full h-full">
+                    <img src="{{ $category->image_url }}" alt="{{ $category->name }}"
+                        class="w-full h-full object-cover transition-transform duration-300" />
+                </figure>
+
+                <!-- Hidden Card Body (slide up on hover) -->
+                <div
+                    class="absolute bottom-0 left-0 w-full h-full translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out bg-white/50 backdrop-blur-sm flex items-center justify-center">
+                    <h2 class="card-title text-brand-darker text-center">
+                        {{ $category->name }}
+                    </h2>
                 </div>
-            </div>
+            </a>
         @endforeach
     </div>
 </div>
