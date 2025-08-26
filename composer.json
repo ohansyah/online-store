@@ -6,7 +6,6 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
-        "afatmustafa/blade-hugeicons": "^0.0.4",
         "barryvdh/laravel-dompdf": "^3.1",
         "blade-ui-kit/blade-heroicons": "^2.3",
         "khatabwedaa/blade-css-icons": "^1.4",
