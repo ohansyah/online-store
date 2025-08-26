@@ -3,17 +3,13 @@
 namespace App\Livewire\App;
 
 use App\Models\Category;
-use App\Models\Order;
-use App\Models\OrderProduct;
-use App\Models\Product;
 use App\Services\ProductService;
-use App\Services\Session;
 use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Illuminate\Http\Request;
 
-class ProductList extends Component
+class Product extends Component
 {
     use WithPagination;
 
@@ -24,7 +20,14 @@ class ProductList extends Component
     public $hasMorePages = true;
     public $page = 1;
     public $allProducts = [];
-    public $cartItems = [];
+
+    public function mount(Request $request)
+    {
+        $categoryId = $request->query('category');
+        if ($categoryId) {
+            $this->toggleCategory($categoryId);
+        }
+    }
 
     public function toggleCategory($categoryId)
     {
@@ -68,7 +71,7 @@ class ProductList extends Component
         }
 
         $this->categories = Cache::remember('categories', 3600, function () {
-            return Category::active()->toBase()->get();
+            return CategoryModel::active()->get();
         });
 
         $products = $this->loadProduct();
@@ -79,8 +82,8 @@ class ProductList extends Component
             $this->allProducts = $products->items();
         }
 
-        return view('livewire.app.product-list', [
+        return view('livewire.app.product', [
             'products' => $this->allProducts,
-        ]);
+        ])->layout('layouts.mobile');
     }
 }

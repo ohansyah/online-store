@@ -15,7 +15,7 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-        @vite('resources/js/auto-slide.js')
+        @stack('scripts')
 
         <!-- Styles -->
         @livewireStyles
