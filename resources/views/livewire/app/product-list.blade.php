@@ -3,11 +3,15 @@
     <!-- Product list -->
     <div class="grid grid-cols-2 gap-4">
         @foreach ($products as $product)
-            <a href="{{ route('app.product.detail', ['id' => $product->id]) }}" class="card shadow-md flex flex-col gap-1 relative h-80 hover:shadow-brand-darker transition duration-200 ease-out">
-                <figure>
-                    <img src="{{ $product->image_url }}" alt="{{ $product->name }}" class="w-full h-full object-cover"/>
+            <a href="{{ route('app.product.detail', ['id' => $product->id]) }}" class="group card relative w-64 h-80 flex-shrink-0 flex-col gap-1 overflow-hidden cursor-pointer">
+                
+                <!-- Image -->
+                <figure class="w-full h-full">
+                    <img src="{{ $product->image_url }}" alt="{{ $product->name }}" class="w-64 h-80 object-cover transition-transform duration-300" />
                 </figure>
-                <div class="card-body p-2 gap-1 grid content-start">
+
+                <!-- Hidden Card Body (slide up on hover) -->
+                <div class="absolute bottom-0 left-0 w-full translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out bg-white/50 backdrop-blur-sm p-2 pt-4">
                     <p class="text-sm font-medium text-brand-darkest">
                         {{ $product->name }}
                     </p>

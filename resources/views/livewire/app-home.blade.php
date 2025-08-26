@@ -58,30 +58,7 @@
                 <p class="text-base font-medium text-brand-darkest">Popular</p>
                 <p class="text-xs text-brand-darker cursor-pointer">See all</p>
             </div>
-
-            <!-- Product list -->
-            <div class="group overflow-x-auto flex gap-5 no-scrollbar">
-                @for ($i = 0; $i < 7; $i++)
-                    <div class="w-32 flex-shrink-0 flex flex-col gap-2">
-                        <!-- Image -->
-                        <div class="relative h-40 rounded-xl overflow-hidden">
-                            <img src="{{ asset('storage/products/lamp.png') }}" alt="Aesthetic Lamp"
-                                class="w-full h-full object-cover" />
-                        </div>
-
-                        <!-- Name -->
-                        <p class="text-sm font-medium text-brand-darkest">
-                            Aesthetic Lamp {{ $i + 1 }}
-                        </p>
-
-                        <!-- Prices -->
-                        <div class="flex items-center gap-2">
-                            <span class="text-sm font-medium text-brand-darker">Rp200k</span>
-                            <span class="text-sm font-medium text-gray-500 line-through">Rp250k</span>
-                        </div>
-                    </div>
-                @endfor
-            </div>
+            <livewire:app.product-section />
         </div>
 
         <livewire:app.category />
