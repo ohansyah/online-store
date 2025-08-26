@@ -73,7 +73,7 @@
             <div class="flex justify-between items-center w-full mb-2">
                 <p class="text-base font-medium text-brand-darkest">Explore More</p>
             </div>
-            <livewire:app.product-list />
+            <livewire:app.product-simple-list />
         </div>
     </div>
 </div>
