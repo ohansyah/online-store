@@ -77,3 +77,6 @@
         </div>
     </div>
 </div>
+@push('scripts')
+    @vite('resources/js/auto-slide.js')
+@endpush
