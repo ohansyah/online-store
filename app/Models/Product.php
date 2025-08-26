@@ -59,4 +59,9 @@ class Product extends Model
         return formatCurrency($this->price, 0, ',', '.');
     }
 
+    public function scopeActive($query)
+    {
+        return $query->where('is_active', true);
+    }
+
 }

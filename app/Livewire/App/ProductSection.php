@@ -13,15 +13,20 @@ class ProductSection extends Component
 
     public function loadProduct()
     {
-        $perpage = 8;
-
-        $productSectionIds = ModelProductSection::where('section_name', $this->section)
+        return ModelProductSection::with('product')
+            ->whereHas('product', function ($query) {
+                $query->where('is_active', true);
+            })
+            ->where('section_name', $this->section)
             ->inRandomOrder()
-            ->take($perpage)
-            ->pluck('id')
-            ->toArray();
-
-        return Product::whereIn('id', $productSectionIds)->get();
+            ->take(8)
+            ->get()
+            ->pluck('product')
+            ->filter(function ($product) {
+                return $product && $product->is_active;
+            })
+            ->values()
+            ->all();
     }
 
     public function render()

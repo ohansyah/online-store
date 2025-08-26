@@ -62,12 +62,12 @@
         </div>
 
         <!-- Categories -->
-        <div class="pb-8">
+        {{-- <div class="pb-8">
             <div class="flex justify-between items-center w-full mb-2">
                 <p class="text-base font-medium text-brand-darkest">Categories</p>
             </div>
             <livewire:app.category />
-        </div>
+        </div> --}}
 
         <div class="pb-8">
             <div class="flex justify-between items-center w-full mb-2">
