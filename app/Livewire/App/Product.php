@@ -7,6 +7,7 @@ use App\Services\ProductService;
 use Illuminate\Support\Facades\Cache;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Illuminate\Http\Request;
 
 class Product extends Component
 {
@@ -19,6 +20,14 @@ class Product extends Component
     public $hasMorePages = true;
     public $page = 1;
     public $allProducts = [];
+
+    public function mount(Request $request)
+    {
+        $categoryId = $request->query('category');
+        if ($categoryId) {
+            $this->toggleCategory($categoryId);
+        }
+    }
 
     public function toggleCategory($categoryId)
     {
