@@ -56,65 +56,24 @@
         <div class="pb-8">
             <div class="flex justify-between items-center w-full mb-2">
                 <p class="text-base font-medium text-brand-darkest">Popular</p>
-                <p class="text-xs text-brand-darker cursor-pointer">See all</p>
+                <p class="text-xs font-medium text-brand-darker cursor-pointer">See all</p>
             </div>
-
-            <!-- Product list -->
-            <div class="group overflow-x-auto flex gap-5 no-scrollbar">
-                @for ($i = 0; $i < 7; $i++)
-                    <div class="w-32 flex-shrink-0 flex flex-col gap-2">
-                        <!-- Image -->
-                        <div class="relative h-40 rounded-xl overflow-hidden">
-                            <img src="{{ asset('storage/products/lamp.png') }}" alt="Aesthetic Lamp"
-                                class="w-full h-full object-cover" />
-                        </div>
-
-                        <!-- Name -->
-                        <p class="text-sm font-medium text-brand-darkest">
-                            Aesthetic Lamp {{ $i + 1 }}
-                        </p>
-
-                        <!-- Prices -->
-                        <div class="flex items-center gap-2">
-                            <span class="text-sm font-medium text-brand-darker">Rp200k</span>
-                            <span class="text-sm font-medium text-gray-500 line-through">Rp250k</span>
-                        </div>
-                    </div>
-                @endfor
-            </div>
+            <livewire:app.product-section />
         </div>
 
-        <livewire:app.category />
+        <!-- Categories -->
+        <div class="pb-8">
+            <div class="flex justify-between items-center w-full mb-2">
+                <p class="text-base font-medium text-brand-darkest">Categories</p>
+            </div>
+            <livewire:app.category />
+        </div>
 
-        <!-- Products -->
         <div class="pb-8">
             <div class="flex justify-between items-center w-full mb-2">
                 <p class="text-base font-medium text-brand-darkest">Explore More</p>
             </div>
-
-            <!-- Product list in 2 columns -->
-            <div class="grid grid-cols-2 gap-4 pr-1">
-                @for ($i = 0; $i < 14; $i++)
-                    <div class="flex flex-col gap-2">
-                        <!-- Image -->
-                        <div class="relative h-40 rounded-xl overflow-hidden">
-                            <img src="{{ asset('storage/products/lamp.png') }}" alt="Aesthetic Lamp"
-                                class="w-full h-full object-cover" />
-                        </div>
-
-                        <!-- Name -->
-                        <p class="text-sm font-medium text-brand-darkest">
-                            Aesthetic Lamp {{ $i + 1 }}
-                        </p>
-
-                        <!-- Prices -->
-                        <div class="flex items-center gap-2">
-                            <span class="text-sm font-medium text-brand-darker">Rp200k</span>
-                            <span class="text-sm font-medium text-gray-500 line-through">Rp250k</span>
-                        </div>
-                    </div>
-                @endfor
-            </div>
+            <livewire:app.product-list />
         </div>
     </div>
 </div>
