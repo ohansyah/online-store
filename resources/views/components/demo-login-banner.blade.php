@@ -1,4 +1,4 @@
-<div x-data="{ show: true, style: 'success', message: 'Demo email:cashier.test@gmail.com password:password' }"
+<div x-data="{ show: true, style: 'success', message: 'Demo email:admin@onlinestore.com password:password' }"
     :class="{ 'bg-indigo-500': style == 'success', 'bg-red-700': style == 'danger', 'bg-yellow-500': style == 'warning', 'bg-gray-500': style == 'info'}"
             style="display: none;"
             x-show="show && message"

@@ -14,7 +14,6 @@ class Product extends Model
         'barcode',
         'name',
         'price',
-        'stock',
         'is_active',
         'image',
         'category_id',

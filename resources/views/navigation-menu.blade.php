@@ -5,21 +5,15 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('cashier.index') }}">
+                    <a href="{{ route('dashboard') }}">
                         <x-application-mark class="block h-9 w-auto" />
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link href="{{ route('cashier.index') }}" wire:navigate :active="request()->routeIs('cashier.index')">
-                        {{ __('Cashier') }}
-                    </x-nav-link>
                     <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
-                    </x-nav-link>
-                    <x-nav-link href="{{ route('order.index') }}" wire:navigate :active="request()->routeIs('order.index') || request()->routeIs('order.show')">
-                        {{ __('Order') }}
                     </x-nav-link>
                     <x-nav-link href="{{ route('product.index') }}" wire:navigate :active="request()->routeIs('product.index')">
                         {{ __('Product') }}
@@ -155,14 +149,8 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link href="{{ route('cashier.index') }}" :active="request()->routeIs('cashier.index')">
-                {{ __('Cashier') }}
-            </x-responsive-nav-link>
             <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
-            </x-responsive-nav-link>
-            <x-responsive-nav-link href="{{ route('order.index') }}" :active="request()->routeIs('order.index') || request()->routeIs('order.show')">
-                {{ __('Order') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link href="{{ route('product.index') }}" :active="request()->routeIs('product.index')">
                 {{ __('Product') }}

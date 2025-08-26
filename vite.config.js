@@ -8,6 +8,7 @@ export default defineConfig({
                 'resources/css/app.css',
                 'resources/js/app.js',
                 'resources/js/cart.js',
+                'resources/js/auto-slide.js',
             ],
             refresh: true,
         }),

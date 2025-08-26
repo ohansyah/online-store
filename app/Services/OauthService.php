@@ -50,6 +50,6 @@ class OauthService
 
         Auth::login($user);
 
-        return redirect()->to('/cashier');
+        return redirect()->to('/dashboard')->with('success', 'Login successful');
     }
 }

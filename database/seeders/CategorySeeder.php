@@ -9,50 +9,49 @@ class CategorySeeder extends Seeder
 {
     /**
      * Run the database seeds.
+     * Source : 
+     *  https://www.flaticon.com/authors/monkik
+     *  https://www.flaticon.com/authors/payungkead
+     *  https://www.flaticon.com/authors/nikita-golubev
      */
     public function run(): void
     {
         $createdAt = now();
         Category::insert([
             [
-                'name' => 'Makanan',
+                'name' => 'Kursi',
                 'created_at' => $createdAt,
-                'image' => 'categories/makanan.png',
+                'image' => 'categories/chair.png',
             ],
             [
-                'name' => 'Minuman',
+                'name' => 'Meja',
                 'created_at' => $createdAt,
-                'image' => 'categories/minuman.png',
+                'image' => 'categories/table.png',
             ],
             [
-                'name' => 'Alat Tulis',
+                'name' => 'Pintu',
                 'created_at' => $createdAt,
-                'image' => 'categories/alat-tulis.png',
+                'image' => 'categories/door.png',
             ],
             [
-                'name' => 'Pakaian',
+                'name' => 'Lemari',
                 'created_at' => $createdAt,
-                'image' => 'categories/pakaian.png',
+                'image' => 'categories/wardrobe.png',
             ],
             [
-                'name' => 'Mainan',
+                'name' => 'Tempat Tidur',
                 'created_at' => $createdAt,
-                'image' => 'categories/mainan.png',
+                'image' => 'categories/bed.png',
             ],
             [
-                'name' => 'Furniture',
+                'name' => 'Dapur',
                 'created_at' => $createdAt,
-                'image' => 'categories/furniture.png',
-            ],
-            [
-                'name' => 'Bumbu Dapur',
-                'created_at' => $createdAt,
-                'image' => 'categories/bumbu.png',
+                'image' => 'categories/kitchen-set.png',
             ],
             [
                 'name' => 'Lainnya',
                 'created_at' => $createdAt,
-                'image' => 'categories/lainnya.png',
+                'image' => 'categories/furniture.png',
             ],
         ]);
     }

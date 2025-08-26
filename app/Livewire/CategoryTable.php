@@ -40,7 +40,7 @@ class CategoryTable extends DataTableComponent
                     fn($row) => $row->image_url
                 )
                 ->attributes(fn($row) => [
-                    'class' => 'object-cover rounded-lg shadow-md w-12 h-12',
+                    'class' => 'object-cover rounded-xl overflow-hidden w-12 h-12',
                 ]),
             Column::make('Action')
                 ->label(

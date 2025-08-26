@@ -28,10 +28,6 @@
                                 class="w-full p-2 border border-gray-300 rounded-lg mt-2" placeholder="Product Price">
                             @error('price') <span class="text-red-500">{{ $message }}</span> @enderror
 
-                            <input type="number" min="0" wire:model="stock"
-                                class="w-full p-2 border border-gray-300 rounded-lg mt-2" placeholder="Product Stock">
-                            @error('stock') <span class="text-red-500">{{ $message }}</span> @enderror
-
                             <select wire:model="category_id" class="w-full p-2 border border-gray-300 rounded-lg mt-2">
                                 <option selected value="">Select Category</option>
                                 @foreach ($categories as $category)

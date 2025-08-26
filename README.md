@@ -5,22 +5,16 @@
 [![PHP](https://img.shields.io/badge/PHP-%5E8.2-blue)](https://www.php.net/) [![Laravel](https://img.shields.io/badge/Laravel-%5E11.0-blue)](https://laravel.com/) [![Laravel Jetstream](https://img.shields.io/badge/Laravel_Jetstream-%5E5.1-blue)](https://jetstream.laravel.com/) [![Livewire](https://img.shields.io/badge/Livewire-%5E3.0-blue)](https://laravel-livewire.com/) [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-%5E3.0-blue)](https://tailwindcss.com/) [![Blade UI Kit (Heroicons)](https://img.shields.io/badge/Blade_UI_Kit_(Heroicons)-%5E2.3-blue)](https://blade-ui-kit.com) [![Blade CSS Icons](https://img.shields.io/badge/Blade_CSS_Icons-%5E1.4-blue)](https://github.com/khatabwedaa/blade-css-icons) [![Larapex Charts](https://img.shields.io/badge/Larapex_Charts-dev--master-blue)](https://github.com/ArielMejiaDev/larapex-charts) [![Laravel Livewire Tables](https://img.shields.io/badge/Laravel_Livewire_Tables-%5E3.2-blue)](https://github.com/rappasoft/laravel-livewire-tables)
 
 
-Cashier Simple POS is a web-based point-of-sale (POS) system built using the Laravel TALL stack. Designed to be simple yet powerful, this system includes key features for managing orders and products, with support for multiple users in single store. The project uses Laravel Jetstream as a starter pack, providing authentication and other essential features.
+Simple Online Store is a front-end web end user with CMS. Built using the Laravel TALL stack. Designed to be simple online store showcasing your products. The project uses Laravel Jetstream as a starter pack, providing authentication and other essential features.
 
    
 
 ### Features
 
-- **Multiuser**: Manage multiple users.
-- **Dashboard Overview**: Get a quick glance at the system's key metrics and performance.
-- **Order Chart**: Visualize orders and sales trends over time.
-- **Checkout Page**: Streamlined checkout process for completing sales.
-- **Order Summary**: Overview of the current order before finalizing the sale.
-- **List Orders**: View a comprehensive list of all orders.
-- **Detail Orders**: Drill down into the details of individual orders.
+- **Front End User**: Home page online store.
 - **Master Product**: Manage the inventory of products available for sale.
 - **Master Category**: Organize products into categories for easier management.
-- **Receipt Order**: Print, Download as PDF and Image Receipts.
+- **Master Banner**: Manage Crousel Banner.
 
 ---
 
@@ -29,8 +23,8 @@ Follow these steps to set up your Laravel 10 project with Jetstream and Vite:
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/ohansyah/cashier.git
-   cd cashier
+   git clone https://github.com/ohansyah/online-store.git
+   cd online-store
 2. **Install Composer Dependencies**
    ```bash
    composer install
@@ -66,4 +60,4 @@ Follow these steps to set up your Laravel 10 project with Jetstream and Vite:
     ```bash
     php artisan serve
 10. **Access Your Application**
-Open your web browser and visit http://localhost:8000 to access cashier project.
+Open your web browser and visit http://localhost:8000 to access online store project.

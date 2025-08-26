@@ -1,1 +1,2 @@
-<x-hugeicons-cashier class="w-12 h-12 sm:w-14 sm:h-14 md:w-24 md:h-24 text-gray-600 transition-transform duration-300 ease-in-out hover:scale-110"/>
+<img src="{{ asset('storage/logo/landscape-transparent.webp') }}" alt="Online Store Logo"
+    class="h-16 sm:h-20 md:h-24 w-auto">

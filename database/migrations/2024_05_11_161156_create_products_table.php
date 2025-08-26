@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('name')->index();
             $table->text('description');
             $table->decimal('price', 10, 2);
-            $table->integer('stock')->index();
             $table->string('image');
             $table->boolean('is_active')->default(1)->index();
             $table->foreignId('category_id')->index();

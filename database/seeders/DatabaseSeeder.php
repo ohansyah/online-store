@@ -15,8 +15,8 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         User::factory()->create([
-            'name' => 'cashier',
-            'email' => 'cashier.test@gmail.com',
+            'name' => 'admin',
+            'email' => 'admin@onlinestore.com',
             'email_verified_at' => now(),
             'password' => Hash::make('password'),
             'two_factor_secret' => null,
@@ -29,6 +29,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             CategorySeeder::class,
             ProductSeeder::class,
+            ProductSectionSeeder::class,
+            GeneralSettingSeeder::class,
         ]);
     }
 }

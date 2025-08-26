@@ -1,6 +1,7 @@
 import defaultTheme from 'tailwindcss/defaultTheme';
 import forms from '@tailwindcss/forms';
 import typography from '@tailwindcss/typography';
+import daisyui from "daisyui";
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -19,10 +20,19 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+                brand: {
+                    lightest: '#E7E1CA',
+                    lighter: '#CEA972',
+                    darker: '#9E7A48',
+                    darkest: '#29201E',
+                },
+            },
         },
     },
 
     plugins: [
+        require('daisyui'),
         forms,
         typography,
         function ({ addUtilities }) {
@@ -38,7 +48,13 @@ export default {
                     'scrollbar-width': 'none',
                 },
             });
-        },],
+        },
+    ],
 
-    darkMode: 'class', // This specifies that Tailwind should look at Class elements to determine dark mode
+    darkMode: 'class',
+    daisyui: {
+        themes: ["light"],
+        base: true,
+        styled: true,
+    },
 };
