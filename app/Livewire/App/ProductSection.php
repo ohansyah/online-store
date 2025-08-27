@@ -18,7 +18,7 @@ class ProductSection extends Component
                 $query->where('is_active', true);
             })
             ->where('section_name', $this->section)
-            // ->inRandomOrder()
+            ->inRandomOrder()
             ->take(8)
             ->get()
             ->pluck('product')
