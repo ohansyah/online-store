@@ -21,13 +21,13 @@
             <p class="text-base font-medium text-brand-darkest mb-2">
                 Hot deals
             </p>
-
-            <div class="relative">
+            <livewire:app.banner />
+            {{-- <div class="relative">
                 <div class="carousel w-full rounded-xl overflow-hidden" id="hot-deals-carousel">
-                    @for ($i = 1; $i <= 5; $i++)
+                    @for ($i = 1; $i <= 3; $i++)
                         <div id="slide{{ $i }}" class="carousel-item relative w-full">
                             <!-- Background Image -->
-                            <img src="{{ asset('storage/default/banners/banner-1.png') }}" class="w-full object-cover"
+                            <img src="{{ asset('storage/default/banners/banner-1.webp') }}" class="w-full object-cover"
                                 alt="Banner {{ $i }}">
 
                             <!-- Text Overlay -->
@@ -49,7 +49,7 @@
                         </a>
                     @endfor
                 </div>
-            </div>
+            </div> --}}
         </div>
 
         <!-- Popular -->
