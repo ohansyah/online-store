@@ -18,7 +18,7 @@ class Banner extends Model
         'is_active',
     ];
 
-    public static function active()
+    public function scopeActive()
     {
         return self::where('is_active', true)
             ->where('started_at', '<=', now())

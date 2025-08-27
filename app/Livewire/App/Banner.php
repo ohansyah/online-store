@@ -12,7 +12,7 @@ class Banner extends Component
     public function render()
     {
         $this->banners = Cache::remember('banners', 3600, function () {
-            return BannerModel::active()->get();
+            return BannerModel::select('id', 'name', 'image')->active()->take(5)->get();
         });
 
         return view('livewire.app.banner');
