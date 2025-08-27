@@ -71,7 +71,7 @@ class Product extends Component
         }
 
         $this->categories = Cache::remember('categories', 3600, function () {
-            return CategoryModel::active()->get();
+            return Category::active()->get();
         });
 
         $products = $this->loadProduct();
