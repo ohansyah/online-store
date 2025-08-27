@@ -23,9 +23,14 @@ class Product extends Component
 
     public function mount(Request $request)
     {
-        $categoryId = $request->query('category');
+        $categoryId = $request->query('category');        
         if ($categoryId) {
             $this->toggleCategory($categoryId);
+        }
+
+        $search = $request->query('search');
+        if ($search) {
+            $this->searchQuery = $search;
         }
     }
 
