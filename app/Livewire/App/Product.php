@@ -4,16 +4,17 @@ namespace App\Livewire\App;
 
 use App\Models\Category;
 use App\Services\ProductService;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Livewire\Component;
 use Livewire\WithPagination;
-use Illuminate\Http\Request;
 
 class Product extends Component
 {
     use WithPagination;
 
     public string $searchQuery = '';
+    public string $section = '';
     public $categories;
     public $selectedCategories = [];
     public $isFilteredCategory = false;
@@ -23,14 +24,16 @@ class Product extends Component
 
     public function mount(Request $request)
     {
-        $categoryId = $request->query('category');        
-        if ($categoryId) {
-            $this->toggleCategory($categoryId);
+        if ($request->has('category') && is_numeric($categoryId)) {
+            $this->toggleCategory($request->query('category'));
         }
 
-        $search = $request->query('search');
-        if ($search) {
-            $this->searchQuery = $search;
+        if ($request->has('search')) {
+            $this->searchQuery = $request->query('search');
+        }
+
+        if ($request->has('section')) {
+            $this->section = $request->query('section');
         }
     }
 
@@ -55,6 +58,11 @@ class Product extends Component
         $products = ProductService::index($this->searchQuery)
             ->when($this->selectedCategories, function ($query) {
                 $query->whereIn('category_id', $this->selectedCategories);
+            })
+            ->when($this->section, function ($query){
+                $query->whereHas('section', function ($q) {
+                    $q->where('section_name', $this->section);
+                });
             })
             ->simplePaginate($perpage, ['*'], 'page', $this->page);
 
