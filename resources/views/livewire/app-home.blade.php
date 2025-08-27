@@ -2,19 +2,19 @@
     <div class="bg-white px-4 sm:px-6 lg:px-8">
 
         <!-- Search Products -->
-        <header class="grid items-center gap-2 py-8">
+        <div class="grid items-center gap-2 py-8">
             <div class="flex justify-center">
                 <div class="w-full">
-                    <form action="#" method="GET" class="relative">
-                        <span class="absolute left-4 top-1/2 -translate-y-1/2 text-[#9E7A48]">
+                    <form action="{{ route('app.product.index') }}" method="GET" class="relative">
+                        <span class="absolute left-4 top-1/2 -translate-y-1/2 text-brand-lighter">
                             <x-heroicon-s-magnifying-glass class="w-6 h-6" />
                         </span>
                         <input type="text" name="search" placeholder="Search..."
-                            class="w-full rounded-full border border-[#E7E1CA] bg-white py-3 pl-12 pr-4 text-sm text-[#29201E] shadow-sm focus:border-[#CEA972] focus:ring-2 focus:ring-[#CEA972] focus:outline-none" />
+                        class="w-full rounded-full border-2 border-brand-lightest text-base font-medium text-brand-darkest p-3 pl-12 focus:border-brand-lighter focus:ring-1 focus:ring-brand-lighter focus:outline-none transition-transform duration-300 ease-out">
                     </form>
                 </div>
             </div>
-        </header>
+        </div>
 
         <!-- Banner Carousel -->
         <div class="pb-8">
