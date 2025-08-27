@@ -9,7 +9,7 @@ use App\Models\ProductSection as ModelProductSection;
 class ProductSection extends Component
 {
     public $products;
-    public string $section = 'popular';
+    public string $section;
 
     public function loadProduct()
     {
@@ -18,7 +18,7 @@ class ProductSection extends Component
                 $query->where('is_active', true);
             })
             ->where('section_name', $this->section)
-            ->inRandomOrder()
+            // ->inRandomOrder()
             ->take(8)
             ->get()
             ->pluck('product')

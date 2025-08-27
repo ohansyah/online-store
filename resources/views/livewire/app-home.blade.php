@@ -58,7 +58,7 @@
                 <p class="text-base font-medium text-brand-darkest">Popular</p>
                 <a href="{{ route('app.product.index', ['section' => 'popular']) }}" wire:navigate class="text-sm font-medium text-brand-darker hover:text-brand-lighter">See all</a>
             </div>
-            <livewire:app.product-section />
+            <livewire:app.product-section section="popular"/>
         </div>
 
         <!-- Categories -->
