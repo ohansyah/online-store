@@ -27,7 +27,7 @@
                     @for ($i = 1; $i <= 5; $i++)
                         <div id="slide{{ $i }}" class="carousel-item relative w-full">
                             <!-- Background Image -->
-                            <img src="{{ asset('storage/banners/banner-1.png') }}" class="w-full object-cover"
+                            <img src="{{ asset('storage/default/banners/banner-1.png') }}" class="w-full object-cover"
                                 alt="Banner {{ $i }}">
 
                             <!-- Text Overlay -->

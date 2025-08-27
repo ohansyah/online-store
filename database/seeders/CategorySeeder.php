@@ -21,37 +21,37 @@ class CategorySeeder extends Seeder
             [
                 'name' => 'Kursi',
                 'created_at' => $createdAt,
-                'image' => 'categories/chair.png',
+                'image' => 'default/categories/chair.png',
             ],
             [
                 'name' => 'Meja',
                 'created_at' => $createdAt,
-                'image' => 'categories/table.png',
+                'image' => 'default/categories/table.png',
             ],
             [
                 'name' => 'Pintu',
                 'created_at' => $createdAt,
-                'image' => 'categories/door.png',
+                'image' => 'default/categories/door.png',
             ],
             [
                 'name' => 'Lemari',
                 'created_at' => $createdAt,
-                'image' => 'categories/wardrobe.png',
+                'image' => 'default/categories/wardrobe.png',
             ],
             [
                 'name' => 'Tempat Tidur',
                 'created_at' => $createdAt,
-                'image' => 'categories/bed.png',
+                'image' => 'default/categories/bed.png',
             ],
             [
                 'name' => 'Dapur',
                 'created_at' => $createdAt,
-                'image' => 'categories/kitchen-set.png',
+                'image' => 'default/categories/kitchen-set.png',
             ],
             [
                 'name' => 'Lainnya',
                 'created_at' => $createdAt,
-                'image' => 'categories/furniture.png',
+                'image' => 'default/categories/furniture.png',
             ],
         ]);
     }
