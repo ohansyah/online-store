@@ -20,11 +20,9 @@
             @foreach ($categories as $category)
                 <button wire:click="toggleCategory({{ $category->id }})" wire:loading.attr="disabled"
                     wire:target="toggleCategory({{ $category->id }})" @class([
-                        'flex-shrink-0 flex items-center rounded-xl p-2 transition duration-200 ease-in-out cursor-pointer border-2 border-brand-lightest bg-white',
+                        'flex-shrink-0 flex items-center rounded-xl p-2 transition duration-200 ease-in-out cursor-pointer border-2 bg-white',
                         'border-brand-lighter' => in_array($category->id, $selectedCategories),
-                        'hover:border-brand-lighter focus:outline-none' => !in_array(
-                            $category->id,
-                            $selectedCategories),
+                        'border-brand-lightest hover:border-brand-lighter focus:outline-none' => !in_array($category->id, $selectedCategories),
                     ])>
 
                     <!-- Loading Animation -->
@@ -43,7 +41,7 @@
         <!-- Product list -->
         <div class="grid grid-cols-2 gap-3">
             @foreach ($products as $product)
-                <a href="{{ route('app.product.detail', ['id' => $product->id]) }}"
+                <a href="{{ route('app.product.detail', ['id' => $product->id]) }}" wire:navigate
                     class="group card relative w-full h-full flex-shrink-0 flex-col gap-1 overflow-hidden cursor-pointer">
 
                     <!-- Image -->

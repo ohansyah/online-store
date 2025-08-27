@@ -45,6 +45,11 @@ class Product extends Model
         return $this->belongsTo(Category::class);
     }
 
+    public function section()
+    {
+        return $this->hasOne(ProductSection::class);
+    }
+
     public function getImageUrlAttribute()
     {
         if (filter_var($this->image, FILTER_VALIDATE_URL)) {

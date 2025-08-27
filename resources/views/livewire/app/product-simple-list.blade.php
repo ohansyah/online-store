@@ -3,7 +3,7 @@
     <!-- Product list -->
     <div class="grid grid-cols-2 gap-3">
         @foreach ($products as $product)
-            <a href="{{ route('app.product.detail', ['id' => $product->id]) }}" class="group card relative w-full h-full flex-shrink-0 flex-col gap-1 overflow-hidden cursor-pointer">
+            <a href="{{ route('app.product.detail', ['id' => $product->id]) }}" wire:navigate class="group card relative w-full h-full flex-shrink-0 flex-col gap-1 overflow-hidden cursor-pointer">
                 
                 <!-- Image -->
                 <figure class="w-full h-full">

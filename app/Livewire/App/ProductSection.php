@@ -9,7 +9,7 @@ use App\Models\ProductSection as ModelProductSection;
 class ProductSection extends Component
 {
     public $products;
-    public string $section = 'popular';
+    public string $section;
 
     public function loadProduct()
     {

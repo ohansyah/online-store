@@ -2,7 +2,7 @@
     <!-- Product list -->
     <div class="overflow-x-auto flex gap-3 no-scrollbar">
         @foreach ($products as $product)
-            <a href="{{ route('app.product.detail', ['id' => $product->id]) }}"
+            <a href="{{ route('app.product.detail', ['id' => $product->id]) }}" wire:navigate
                 class="group card relative w-32 h-40 flex-shrink-0 overflow-hidden cursor-pointer">
 
                 <!-- Image -->
