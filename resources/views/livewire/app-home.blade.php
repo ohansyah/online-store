@@ -56,7 +56,7 @@
         <div class="pb-8">
             <div class="flex justify-between items-center w-full mb-2">
                 <p class="text-base font-medium text-brand-darkest">Popular</p>
-                <a href="{{ route('app.product.index', ['section' => 'popular']) }}" class="text-sm font-medium text-brand-darker hover:text-brand-lighter">See all</a>
+                <a href="{{ route('app.product.index', ['section' => 'popular']) }}" wire:navigate class="text-sm font-medium text-brand-darker hover:text-brand-lighter">See all</a>
             </div>
             <livewire:app.product-section />
         </div>
@@ -72,7 +72,7 @@
         <div class="pb-8">
             <div class="flex justify-between items-center w-full mb-2">
                 <p class="text-base font-medium text-brand-darkest">Explore More</p>
-                <a href="{{ route('app.product.index') }}" class="text-sm font-medium text-brand-darker hover:text-brand-lighter">See all</a>
+                <a href="{{ route('app.product.index') }}" wire:navigate class="text-sm font-medium text-brand-darker hover:text-brand-lighter">See all</a>
             </div>
             <livewire:app.product-simple-list />
         </div>
