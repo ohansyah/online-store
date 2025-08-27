@@ -24,7 +24,7 @@ class Product extends Component
 
     public function mount(Request $request)
     {
-        if ($request->has('category') && is_numeric($categoryId)) {
+        if ($request->has('category') && is_numeric($request->query('category'))) {
             $this->toggleCategory($request->query('category'));
         }
 
