@@ -3,28 +3,39 @@
 namespace App\Livewire\App;
 
 use App\Models\Category;
-use App\Models\Order;
-use App\Models\OrderProduct;
-use App\Models\Product;
 use App\Services\ProductService;
-use App\Services\Session;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class ProductList extends Component
+class Product extends Component
 {
     use WithPagination;
 
     public string $searchQuery = '';
+    public string $section = '';
     public $categories;
     public $selectedCategories = [];
     public $isFilteredCategory = false;
     public $hasMorePages = true;
     public $page = 1;
     public $allProducts = [];
-    public $cartItems = [];
+
+    public function mount(Request $request)
+    {
+        if ($request->has('category') && is_numeric($request->query('category'))) {
+            $this->toggleCategory($request->query('category'));
+        }
+
+        if ($request->has('search')) {
+            $this->searchQuery = $request->query('search');
+        }
+
+        if ($request->has('section')) {
+            $this->section = $request->query('section');
+        }
+    }
 
     public function toggleCategory($categoryId)
     {
@@ -48,6 +59,11 @@ class ProductList extends Component
             ->when($this->selectedCategories, function ($query) {
                 $query->whereIn('category_id', $this->selectedCategories);
             })
+            ->when($this->section, function ($query){
+                $query->whereHas('section', function ($q) {
+                    $q->where('section_name', $this->section);
+                });
+            })
             ->simplePaginate($perpage, ['*'], 'page', $this->page);
 
         $this->hasMorePages = $products->hasMorePages();
@@ -68,7 +84,7 @@ class ProductList extends Component
         }
 
         $this->categories = Cache::remember('categories', 3600, function () {
-            return Category::active()->toBase()->get();
+            return Category::active()->get();
         });
 
         $products = $this->loadProduct();
@@ -79,8 +95,8 @@ class ProductList extends Component
             $this->allProducts = $products->items();
         }
 
-        return view('livewire.app.product-list', [
+        return view('livewire.app.product', [
             'products' => $this->allProducts,
-        ]);
+        ])->layout('layouts.mobile');
     }
 }

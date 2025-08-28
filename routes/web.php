@@ -10,6 +10,8 @@ use App\Livewire\Forms\CategoryForm;
 use App\Livewire\Forms\ProductForm;
 use App\Livewire\Product;
 use App\Livewire\App\ProductDetail;
+use App\Livewire\App\Product as AppProduct;
+use App\Livewire\App\BannerDetail as AppBannerDetail;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware([
@@ -17,7 +19,12 @@ Route::middleware([
 ])->group(function () {
     Route::get('/', AppHome::class)->name('app.home');
 
+    Route::group(['prefix' => 'banner'], function () {
+        Route::get('/{id}', AppBannerDetail::class)->name('app.banner.detail');
+    });
+
     Route::group(['prefix' => 'product'], function () {
+        Route::get('/', AppProduct::class)->name('app.product.index');
         Route::get('/{id}', ProductDetail::class)->name('app.product.detail');
     });
 });

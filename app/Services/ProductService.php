@@ -10,6 +10,6 @@ class ProductService
     {
         return Product::when($searchQuery, function ($query, $searchQuery) {
             return $query->where('name', 'like', '%' . $searchQuery . '%');
-        });
+        })->active();
     }
 }

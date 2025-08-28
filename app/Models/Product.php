@@ -45,6 +45,11 @@ class Product extends Model
         return $this->belongsTo(Category::class);
     }
 
+    public function section()
+    {
+        return $this->hasOne(ProductSection::class);
+    }
+
     public function getImageUrlAttribute()
     {
         if (filter_var($this->image, FILTER_VALIDATE_URL)) {
@@ -57,6 +62,11 @@ class Product extends Model
     public function getPriceFormattedAttribute()
     {
         return formatCurrency($this->price, 0, ',', '.');
+    }
+
+    public function scopeActive($query)
+    {
+        return $query->where('is_active', true);
     }
 
 }
