@@ -22,34 +22,6 @@
                 Hot deals
             </p>
             <livewire:app.banner />
-            {{-- <div class="relative">
-                <div class="carousel w-full rounded-xl overflow-hidden" id="hot-deals-carousel">
-                    @for ($i = 1; $i <= 3; $i++)
-                        <div id="slide{{ $i }}" class="carousel-item relative w-full">
-                            <!-- Background Image -->
-                            <img src="{{ asset('storage/default/banners/banner-1.webp') }}" class="w-full object-cover"
-                                alt="Banner {{ $i }}">
-
-                            <!-- Text Overlay -->
-                            <div class="absolute left-4 top-1/2 -translate-y-1/2">
-                                <p class="text-xl font-medium text-brand-darkest">
-                                    Up to 50% off <br> on your {{ $i }}st order
-                                </p>
-                            </div>
-                        </div>
-                    @endfor
-                </div>
-
-                <!-- Bullets -->
-                <div id="carousel-bullets" class="flex w-full justify-center gap-1 py-1">
-                    @for ($i = 1; $i <= 5; $i++)
-                        <a data-slide="{{ $i }}"
-                            class="w-6 h-2 rounded-full transition 
-                                {{ $i === 1 ? 'bg-brand-darker' : 'bg-brand-lightest hover:bg-brand-lighter' }}">
-                        </a>
-                    @endfor
-                </div>
-            </div> --}}
         </div>
 
         <!-- Popular -->

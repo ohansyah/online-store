@@ -2,9 +2,10 @@
     <div class="relative">
         <div class="carousel w-full rounded-xl overflow-hidden" id="hot-deals-carousel">
             @foreach ($banners as $index => $banner)
-                <div id="slide{{ $index }}" class="carousel-item relative w-full">
+                <a href="{{ route('app.banner.detail', ['id' => $banner->id]) }}" wire:navigate
+                    id="slide{{ $index }}" class="carousel-item relative w-full">
                     <!-- Background Image -->
-                    <img src="{{ asset('storage/default/banners/banner-1.webp') }}" class="w-full object-cover"
+                    <img src="{{ $banner->image_url }}" class="w-full object-cover"
                         alt="{{ $banner->name }}">
 
                     <!-- Text Overlay -->
@@ -13,7 +14,7 @@
                             {{ $banner->name }}
                         </p>
                     </div>
-                </div>
+                </a>
             @endforeach
         </div>
 

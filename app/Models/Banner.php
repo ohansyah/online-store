@@ -18,6 +18,15 @@ class Banner extends Model
         'is_active',
     ];
 
+    public function getImageUrlAttribute()
+    {
+        if (filter_var($this->image, FILTER_VALIDATE_URL)) {
+            return $this->image;
+        } else {
+            return asset('storage/' . $this->image);
+        }
+    }
+
     public function scopeActive()
     {
         return self::where('is_active', true)
