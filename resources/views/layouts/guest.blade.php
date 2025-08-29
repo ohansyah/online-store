@@ -7,7 +7,14 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
-        <link rel="icon" type="image/svg+xml" href="{{ asset('storage/images/favicon.svg') }}">
+        <!-- Modern favicon (WebP) -->
+        <link rel="icon" type="image/webp" href="{{ asset('storage/logo/center-transparent-sm.webp') }}">
+
+        <!-- Fallback for Safari/older browsers -->
+        <link rel="icon" type="image/png" href="{{ asset('storage/logo/center-transparent-sm.png') }}">
+
+        <!-- Optional: iOS/Apple Touch Icon -->
+        <link rel="apple-touch-icon" href="{{ asset('storage/logo/center-transparent-sm.png') }}">
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
