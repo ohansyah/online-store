@@ -10,9 +10,10 @@ class CategorySeeder extends Seeder
     /**
      * Run the database seeds.
      * Source : 
-     *  https://www.flaticon.com/authors/monkik
-     *  https://www.flaticon.com/authors/payungkead
-     *  https://www.flaticon.com/authors/nikita-golubev
+     * https://www.flaticon.com/free-icons/table
+     * https://www.flaticon.com/free-icons/door
+     * https://www.flaticon.com/free-icons/wardrobe
+     * https://www.flaticon.com/free-icons/sink
      */
     public function run(): void
     {
