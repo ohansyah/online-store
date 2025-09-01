@@ -1,8 +1,8 @@
 <div>
-    <div class="bg-white px-4 sm:px-6 lg:px-8">
+    <div>
 
         <!-- Search Products -->
-        <div class="grid items-center gap-2 py-8">
+        <div class="grid items-center gap-2 pb-8">
             <div class="flex justify-center">
                 <div class="w-full">
                     <form action="{{ route('app.product.index') }}" method="GET" class="relative">
