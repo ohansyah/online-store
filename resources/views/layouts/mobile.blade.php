@@ -7,7 +7,14 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
-        <link rel="icon" type="image/svg+xml" href="{{ asset('storage/images/favicon.svg') }}">
+        <!-- Modern favicon (WebP) -->
+        <link rel="icon" type="image/webp" href="{{ asset('storage/logo/center-transparent-sm.webp') }}">
+
+        <!-- Fallback for Safari/older browsers -->
+        <link rel="icon" type="image/png" href="{{ asset('storage/logo/center-transparent-sm.png') }}">
+
+        <!-- Optional: iOS/Apple Touch Icon -->
+        <link rel="apple-touch-icon" href="{{ asset('storage/logo/center-transparent-sm.png') }}">
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -23,11 +30,11 @@
     <body class="font-sans antialiased">
         <x-banner />
 
-        <div class="min-h-screen bg-gray-100">
+        <div class="bg-gray-100">
             @livewire('app.navigation-menu')
 
             <!-- Page Content -->
-            <main class="max-w-xl mx-auto mt-16">
+            <main class="min-h-screen max-w-xl mx-auto pt-24 bg-white px-4 sm:px-6 lg:px-8">
                 {{ $slot }}
             </main>
         </div>

@@ -1,8 +1,8 @@
 <div>
-    <div class="bg-white px-4 sm:px-6 lg:px-8">
+    <div>
 
         <!-- Search Products -->
-        <div class="grid items-center gap-2 py-8">
+        <div class="grid items-center gap-2 pb-8">
             <div class="flex justify-center">
                 <div class="w-full">
                     <form action="{{ route('app.product.index') }}" method="GET" class="relative">
@@ -18,10 +18,11 @@
 
         <!-- Banner Carousel -->
         <div class="pb-8">
-            <p class="text-base font-medium text-brand-darkest mb-2">
-                Hot deals
-            </p>
-            <livewire:app.banner />
+            <div class="flex justify-between items-center w-full mb-2">
+                <p class="text-base font-medium text-brand-darkest">Hot Deals</p>
+                <a href="{{ route('app.banner.index') }}" wire:navigate class="text-sm font-medium text-brand-darker hover:text-brand-lighter">See all</a>
+            </div>
+            <livewire:app.banner-slider />
         </div>
 
         <!-- Popular -->

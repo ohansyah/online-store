@@ -12,6 +12,8 @@ use App\Livewire\Product;
 use App\Livewire\App\ProductDetail;
 use App\Livewire\App\Product as AppProduct;
 use App\Livewire\App\BannerDetail as AppBannerDetail;
+use App\Livewire\App\Banner as AppBanner;
+use App\Livewire\App\Page as AppPage;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware([
@@ -20,6 +22,7 @@ Route::middleware([
     Route::get('/', AppHome::class)->name('app.home');
 
     Route::group(['prefix' => 'banner'], function () {
+        Route::get('/', AppBanner::class)->name('app.banner.index');
         Route::get('/{id}', AppBannerDetail::class)->name('app.banner.detail');
     });
 
@@ -27,23 +30,11 @@ Route::middleware([
         Route::get('/', AppProduct::class)->name('app.product.index');
         Route::get('/{id}', ProductDetail::class)->name('app.product.detail');
     });
-});
 
-Route::get('/promo', function () {
-    return json([
-        'message' => 'Welcome to the Promo Page!',
-    ]);
-})->name('app.promo');
-Route::get('/delivery', function () {
-    return json([
-        'message' => 'Welcome to the delivery Page!',
-    ]);
-})->name('app.delivery');
-Route::get('/info', function () {
-    return json([
-        'message' => 'Welcome to the info Page!',
-    ]);
-})->name('app.info');
+    Route::group(['prefix' => 'page'], function () {
+        Route::get('/{title}', AppPage::class)->name('app.page.detail');
+    });
+});
 
 Route::middleware([
     'auth:sanctum',

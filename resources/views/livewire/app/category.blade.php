@@ -1,10 +1,10 @@
-<div class="pb-8">
+<div>
     <div class="overflow-x-auto flex gap-2 no-scrollbar">
         @foreach ($categories as $category)
             <a href="{{ route('app.product.index', ['category' => $category->id]) }}" wire:navigate class="group card relative w-24 h-24 flex-shrink-0 overflow-hidden cursor-pointer">
 
                 <!-- Image -->
-                <figure class="w-full h-full">
+                <figure class="w-full h-full p-2">
                     <img src="{{ $category->image_url }}" alt="{{ $category->name }}"
                         class="w-full h-full object-cover transition-transform duration-300" />
                 </figure>

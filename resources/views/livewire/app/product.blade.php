@@ -1,6 +1,6 @@
 <div>
 
-    <div class="bg-white p-6 grid gap-6">
+    <div class="grid gap-6">
 
         {{-- Search --}}
         <div class="grid items-center">
