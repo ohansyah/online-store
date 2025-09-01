@@ -23,5 +23,8 @@
             </div>
             <livewire:app.product-section section="discount"/>
         </div>
+
+        {{-- fix overlap --}}
+        <div class="pb-8"></div>
     </div>
 </div>
