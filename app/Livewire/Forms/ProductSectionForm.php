@@ -13,6 +13,7 @@ class ProductSectionForm extends Component
     public string $sectionName;
     public array $productIds = [];
     public $currentProducts = [];
+    public $availableProducts = [];
 
     protected $rules = [
         'sectionName' => 'required|in:popular,discount',
@@ -30,6 +31,18 @@ class ProductSectionForm extends Component
 
         $this->currentProducts = Product::select('id', 'name', 'price', 'image')
             ->whereIn('id', $this->productIds)
+            ->get()
+            ->map(function ($item) {
+                return (object) [
+                    'id' => $item->id,
+                    'name' => $item->name,
+                    'image_url' => $item->image_url,
+                    'price_formatted' => $item->price_formatted,
+                ];
+            });
+
+        $this->availableProducts = Product::select('id', 'name', 'price', 'image')
+            ->limit(8)
             ->get()
             ->map(function ($item) {
                 return (object) [
