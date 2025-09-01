@@ -15,16 +15,16 @@
                     <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                    <x-nav-link href="{{ route('product.index') }}" wire:navigate :active="request()->routeIs('product.index')">
+                    <x-nav-link href="{{ route('product.index') }}" wire:navigate :active="request()->routeIs('product.*')">
                         {{ __('Product') }}
                     </x-nav-link>
-                    <x-nav-link href="{{ route('category.index') }}" wire:navigate :active="request()->routeIs('category.index')">
+                    <x-nav-link href="{{ route('category.index') }}" wire:navigate :active="request()->routeIs('category.*')">
                         {{ __('Category') }}
                     </x-nav-link>
-                    <x-nav-link href="{{ route('banner.index') }}" wire:navigate :active="request()->routeIs('banner.index')">
+                    <x-nav-link href="{{ route('banner.index') }}" wire:navigate :active="request()->routeIs('banner.*')">
                         {{ __('Banner') }}
                     </x-nav-link>
-                    <x-nav-link href="{{ route('page.index') }}" wire:navigate :active="request()->routeIs('page.index')">
+                    <x-nav-link href="{{ route('page.index') }}" wire:navigate :active="request()->routeIs('page.*')">
                         {{ __('Page') }}
                     </x-nav-link>
                 </div>
@@ -158,16 +158,16 @@
             <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link href="{{ route('product.index') }}" :active="request()->routeIs('product.index')">
+            <x-responsive-nav-link href="{{ route('product.index') }}" :active="request()->routeIs('product.*')">
                 {{ __('Product') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link href="{{ route('category.index') }}" :active="request()->routeIs('category.index')">
+            <x-responsive-nav-link href="{{ route('category.index') }}" :active="request()->routeIs('category.*')">
                 {{ __('Category') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link href="{{ route('banner.index') }}" :active="request()->routeIs('banner.index')">
+            <x-responsive-nav-link href="{{ route('banner.index') }}" :active="request()->routeIs('banner.*')">
                 {{ __('Banner') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link href="{{ route('page.index') }}" :active="request()->routeIs('page.index')">
+            <x-responsive-nav-link href="{{ route('page.index') }}" :active="request()->routeIs('page.*')">
                 {{ __('Page') }}
             </x-responsive-nav-link>
         </div>
