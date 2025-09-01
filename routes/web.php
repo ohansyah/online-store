@@ -13,7 +13,9 @@ use App\Livewire\Forms\CategoryForm;
 use App\Livewire\Forms\BannerForm;
 use App\Livewire\Forms\ProductForm;
 use App\Livewire\Forms\PageForm;
+use App\Livewire\Forms\ProductSectionForm;
 use App\Livewire\Product;
+use App\Livewire\ProductSection;
 use App\Livewire\App\ProductDetail;
 use App\Livewire\App\Product as AppProduct;
 use App\Livewire\App\BannerDetail as AppBannerDetail;
@@ -52,6 +54,9 @@ Route::middleware([
     Route::get('/product/create', ProductForm::class)->name('product.create');
     Route::get('/product/edit/{productId}', ProductForm::class)->name('product.edit');
     Route::delete('/product/delete/{productId}', [ProductController::class, 'delete'])->name('product.delete');
+
+    Route::get('/product-section', ProductSection::class)->name('product-section.index');
+    Route::get('/product-section/{sectionName}', ProductSectionForm::class)->name('product-section.edit');
 
     Route::get('/category', Category::class)->name('category.index');
     Route::get('/category/create', CategoryForm::class)->name('category.create');
