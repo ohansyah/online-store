@@ -1,4 +1,4 @@
-<div class="bg-white p-6 min-h-screen">
+<div>
     <div class="grid gap-6">        
         <!-- banner list -->
         @foreach ($banners as $banner)

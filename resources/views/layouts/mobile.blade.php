@@ -30,11 +30,11 @@
     <body class="font-sans antialiased">
         <x-banner />
 
-        <div class="min-h-screen bg-gray-100">
+        <div class="bg-gray-100">
             @livewire('app.navigation-menu')
 
             <!-- Page Content -->
-            <main class="max-w-xl mx-auto mt-16">
+            <main class="min-h-screen max-w-xl mx-auto pt-24 bg-white px-4 sm:px-6 lg:px-8">
                 {{ $slot }}
             </main>
         </div>

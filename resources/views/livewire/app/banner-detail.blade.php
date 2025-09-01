@@ -1,5 +1,5 @@
 <div>
-    <div class="bg-white p-6 min-h-screen">
+    <div>
         <div class="card bg-base-100 w-full overflow-hidden shadow-md">
             <figure>
                 <img src="{{ $banner->image_url }}" alt="{{ $banner->name }}" />
