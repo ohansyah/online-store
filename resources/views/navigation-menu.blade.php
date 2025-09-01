@@ -24,6 +24,9 @@
                     <x-nav-link href="{{ route('banner.index') }}" wire:navigate :active="request()->routeIs('banner.index')">
                         {{ __('Banner') }}
                     </x-nav-link>
+                    <x-nav-link href="{{ route('page.index') }}" wire:navigate :active="request()->routeIs('page.index')">
+                        {{ __('Page') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -163,6 +166,9 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link href="{{ route('banner.index') }}" :active="request()->routeIs('banner.index')">
                 {{ __('Banner') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link href="{{ route('page.index') }}" :active="request()->routeIs('page.index')">
+                {{ __('Page') }}
             </x-responsive-nav-link>
         </div>
 

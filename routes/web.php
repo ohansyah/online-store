@@ -8,9 +8,11 @@ use App\Http\Controllers\BannerController;
 use App\Livewire\AppHome;
 use App\Livewire\Category;
 use App\Livewire\Banner;
+use App\Livewire\Page;
 use App\Livewire\Forms\CategoryForm;
 use App\Livewire\Forms\BannerForm;
 use App\Livewire\Forms\ProductForm;
+use App\Livewire\Forms\PageForm;
 use App\Livewire\Product;
 use App\Livewire\App\ProductDetail;
 use App\Livewire\App\Product as AppProduct;
@@ -60,6 +62,9 @@ Route::middleware([
     Route::get('/banner/create', BannerForm::class)->name('banner.create');
     Route::get('/banner/edit/{bannerId}', BannerForm::class)->name('banner.edit');
     Route::delete('/banner/delete/{categoryId}', [BannerController::class, 'delete'])->name('banner.delete');
+
+    Route::get('/page', Page::class)->name('page.index');
+    Route::get('/page/edit/{pageId}', PageForm::class)->name('page.edit');
 
     Route::get('/general-setting/clear/{key}', [GeneralSettingController::class, 'clear'])->name('general-setting.clear');
     Route::get('/general-setting', [GeneralSettingController::class, 'index'])->name('general-setting.index');
