@@ -4,9 +4,12 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GeneralSettingController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\BannerController;
 use App\Livewire\AppHome;
 use App\Livewire\Category;
+use App\Livewire\Banner;
 use App\Livewire\Forms\CategoryForm;
+use App\Livewire\Forms\BannerForm;
 use App\Livewire\Forms\ProductForm;
 use App\Livewire\Product;
 use App\Livewire\App\ProductDetail;
@@ -52,6 +55,11 @@ Route::middleware([
     Route::get('/category/create', CategoryForm::class)->name('category.create');
     Route::get('/category/edit/{categoryId}', CategoryForm::class)->name('category.edit');
     Route::delete('/category/delete/{categoryId}', [CategoryController::class, 'delete'])->name('category.delete');
+
+    Route::get('/banner', Banner::class)->name('banner.index');
+    Route::get('/banner/create', BannerForm::class)->name('banner.create');
+    Route::get('/banner/edit/{bannerId}', BannerForm::class)->name('banner.edit');
+    Route::delete('/banner/delete/{categoryId}', [BannerController::class, 'delete'])->name('banner.delete');
 
     Route::get('/general-setting/clear/{key}', [GeneralSettingController::class, 'clear'])->name('general-setting.clear');
     Route::get('/general-setting', [GeneralSettingController::class, 'index'])->name('general-setting.index');

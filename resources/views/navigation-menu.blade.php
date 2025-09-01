@@ -21,6 +21,9 @@
                     <x-nav-link href="{{ route('category.index') }}" wire:navigate :active="request()->routeIs('category.index')">
                         {{ __('Category') }}
                     </x-nav-link>
+                    <x-nav-link href="{{ route('banner.index') }}" wire:navigate :active="request()->routeIs('banner.index')">
+                        {{ __('Banner') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -156,7 +159,10 @@
                 {{ __('Product') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link href="{{ route('category.index') }}" :active="request()->routeIs('category.index')">
-                {{ __('Categpry') }}
+                {{ __('Category') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link href="{{ route('banner.index') }}" :active="request()->routeIs('banner.index')">
+                {{ __('Banner') }}
             </x-responsive-nav-link>
         </div>
 

@@ -18,6 +18,11 @@
     "category_edit": "Edit Category",
     "category_delete": "Delete Category",
 
+    "banner": "Banner",
+    "banner_add": "Add New Banner",
+    "banner_edit": "Edit Banner",
+    "banner_delete": "Delete Banner",
+
     "product": "Product",
     "product_add": "Add New Product",
     "product_edit": "Edit Product",
