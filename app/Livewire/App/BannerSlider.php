@@ -11,7 +11,7 @@ class BannerSlider extends Component
     public $banners;
     public function render()
     {
-        $this->banners = Cache::remember('banners', 3600, function () {
+        $this->banners = Cache::remember('banner:slider', 3600, function () {
             return BannerModel::select('id', 'name', 'image')->active()->take(5)->get();
         });
 
