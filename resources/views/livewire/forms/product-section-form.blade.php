@@ -7,6 +7,13 @@
                 </h1>
             </div>
 
+            {{-- 
+                ! Add functionality to add and remove from both list
+                ! Get available product from table products
+                !    Search box to filter available products
+                ! Save button to save the changes
+            --}}
+
             <div class="bg-gray-200 bg-opacity-25">
                 <form wire:submit.prevent="save" enctype="multipart/form-data">
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 p-6 sm:p-8">
