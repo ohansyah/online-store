@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\Banner;
 
 class DashboardController extends Controller
 {
@@ -28,7 +29,7 @@ class DashboardController extends Controller
                 ],
                 [
                     'title' => 'Banners',
-                    'count' => 0, // Assuming no banners for now
+                    'count' => Banner::count(),
                 ]
             ]
         ]);
