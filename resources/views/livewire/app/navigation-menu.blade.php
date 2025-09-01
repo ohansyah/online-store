@@ -14,14 +14,11 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link href="{{ route('app.promo') }}" wire:navigate :active="request()->routeIs('app.promo')">
-                        {{ __('Promo') }}
+                    <x-nav-link href="{{ route('app.page.detail', ['title' => 'Delivery']) }}" wire:navigate :active="request()->routeIs('app.page.detail') && request()->route('title') === 'Delivery'">
+                        {{ __('Delivery') }}
                     </x-nav-link>
-                    <x-nav-link href="{{ route('app.delivery') }}" wire:navigate :active="request()->routeIs('app.delivery')">
-                        {{ __('Pengiriman') }}
-                    </x-nav-link>
-                    <x-nav-link href="{{ route('app.info') }}" wire:navigate :active="request()->routeIs('app.info')">
-                        {{ __('Informasi Toko') }}
+                    <x-nav-link href="{{ route('app.page.detail', ['title' => 'Info']) }}" wire:navigate :active="request()->routeIs('app.page.detail') && request()->route('title') === 'Info'">
+                        {{ __('Info') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -92,14 +89,11 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1 text-sm/relaxed">
-            <x-responsive-nav-link href="{{ route('app.promo') }}" :active="request()->routeIs('app.promo')">
-                {{ __('Promo') }}
+            <x-responsive-nav-link href="{{ route('app.page.detail', ['title' => 'Delivery']) }}" :active="request()->routeIs('app.page.detail') && request()->route('title') === 'Delivery'">
+                {{ __('Delivery') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link href="{{ route('app.delivery') }}" :active="request()->routeIs('app.delivery')">
-                {{ __('Pengiriman') }}
-            </x-responsive-nav-link>
-            <x-responsive-nav-link href="{{ route('app.info') }}" :active="request()->routeIs('app.info')">
-                {{ __('Informasi Toko') }}
+            <x-responsive-nav-link href="{{ route('app.page.detail', ['title' => 'Info']) }}" :active="request()->routeIs('app.page.detail') && request()->route('title') === 'Info'">
+                {{ __('Info') }}
             </x-responsive-nav-link>
         </div>
 
