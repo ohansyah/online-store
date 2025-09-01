@@ -12,6 +12,7 @@ use App\Livewire\Product;
 use App\Livewire\App\ProductDetail;
 use App\Livewire\App\Product as AppProduct;
 use App\Livewire\App\BannerDetail as AppBannerDetail;
+use App\Livewire\App\Banner as AppBanner;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware([
@@ -20,6 +21,7 @@ Route::middleware([
     Route::get('/', AppHome::class)->name('app.home');
 
     Route::group(['prefix' => 'banner'], function () {
+        Route::get('/', AppBanner::class)->name('app.banner.index');
         Route::get('/{id}', AppBannerDetail::class)->name('app.banner.detail');
     });
 
