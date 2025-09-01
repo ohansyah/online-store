@@ -1,31 +1,29 @@
-<div>
-    <div class="relative">
-        <div class="carousel w-full rounded-xl overflow-hidden" id="hot-deals-carousel">
-            @foreach ($banners as $index => $banner)
-                <a href="{{ route('app.banner.detail', ['id' => $banner->id]) }}" wire:navigate
-                    id="slide{{ $index }}" class="carousel-item relative w-full">
-                    <!-- Background Image -->
-                    <img src="{{ $banner->image_url }}" class="w-full object-cover"
-                        alt="{{ $banner->name }}">
+<div class="bg-white p-6 min-h-screen">
+    <div class="grid gap-6">        
+        <!-- banner list -->
+        @foreach ($banners as $banner)
+            <a href="{{ route('app.banner.detail', ['id' => $banner->id]) }}" wire:navigate
+                class="group card relative w-full h-full flex-shrink-0 flex-col gap-1 overflow-hidden cursor-pointer">
 
-                    <!-- Text Overlay -->
-                    <div class="absolute left-4 top-1/2 -translate-y-1/2">
-                        <p class="text-xl font-medium text-brand-darkest">
+                <!-- Image -->
+                <figure class="w-full h-full">
+                    <img src="{{ $banner->image_url }}" alt="{{ $banner->name }}"
+                        class="w-full h-full object-cover transition-transform duration-300" />
+                </figure>
+
+                <!-- Hidden Card Body (slide up on hover) -->
+                <div
+                    class="absolute bottom-0 left-0 w-full translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out bg-white/50 backdrop-blur-sm p-2 pt-4">
+                    <div class="card-body">
+                        <h2 class="card-title">
                             {{ $banner->name }}
-                        </p>
+                        </h2>
+                        <div class="card-actions">
+                            <div class="badge badge-outline badge-lg badge-warning">Ends at: {{ $banner->ended_at }}</div>
+                        </div>
                     </div>
-                </a>
-            @endforeach
-        </div>
-
-        <!-- Bullets -->
-        <div id="carousel-bullets" class="flex w-full justify-center gap-1 py-1">
-            @for ($i = 1; $i <= $banners->count(); $i++)
-                <a data-slide="{{ $i }}"
-                    class="w-6 h-2 rounded-full transition 
-                        {{ $i === 1 ? 'bg-brand-darker' : 'bg-brand-lightest hover:bg-brand-lighter' }}">
-                </a>
-            @endfor
-        </div>
+                </div>
+            </a>
+        @endforeach
     </div>
 </div>

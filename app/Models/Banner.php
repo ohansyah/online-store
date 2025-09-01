@@ -18,6 +18,8 @@ class Banner extends Model
         'is_active',
     ];
 
+    protected $appends = ['image_url'];
+
     public function getImageUrlAttribute()
     {
         if (filter_var($this->image, FILTER_VALIDATE_URL)) {
@@ -27,9 +29,9 @@ class Banner extends Model
         }
     }
 
-    public function scopeActive()
+    public function scopeActive($query)
     {
-        return self::where('is_active', true)
+        return $query->where('is_active', true)
             ->where('started_at', '<=', now())
             ->where('ended_at', '>=', now());
     }

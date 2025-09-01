@@ -11,10 +11,10 @@ class Banner extends Component
     public $banners;
     public function render()
     {
-        $this->banners = Cache::remember('banners', 3600, function () {
-            return BannerModel::select('id', 'name', 'image')->active()->take(5)->get();
+        $this->banners = Cache::remember('banner:list', 3600, function () {
+            return BannerModel::select('id', 'name', 'image', 'started_at', 'ended_at')->active()->get();
         });
 
-        return view('livewire.app.banner');
+        return view('livewire.app.banner')->layout('layouts.mobile');
     }
 }
