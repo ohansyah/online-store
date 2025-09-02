@@ -1,4 +1,4 @@
-![Storefront Screenshot](storage\app\public\default\screenshots\app-collection.webp)
+![Storefront Screenshot](storage/app/public/default/screenshots/app-collection.webp)
 
 [![PHP](https://img.shields.io/badge/PHP-%5E8.2-blue)](https://www.php.net/) [![Laravel](https://img.shields.io/badge/Laravel-%5E11.0-blue)](https://laravel.com/) [![Laravel Jetstream](https://img.shields.io/badge/Laravel_Jetstream-%5E5.1-blue)](https://jetstream.laravel.com/) [![Livewire](https://img.shields.io/badge/Livewire-%5E3.0-blue)](https://laravel-livewire.com/) [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-%5E3.0-blue)](https://tailwindcss.com/) [![Laravel Livewire Tables](https://img.shields.io/badge/Laravel_Livewire_Tables-%5E3.2-blue)](https://github.com/rappasoft/laravel-livewire-tables)
 
@@ -78,16 +78,16 @@ Follow these steps to set up your Laravel 10 project with Jetstream and Vite:
 ---
 
 ### End User
-![app-home](storage\app\public\default\screenshots\app-home.webp)
-![app-home-1](storage\app\public\default\screenshots\app-home-1.webp)
-![app-detail-product](storage\app\public\default\screenshots\app-detail-product.webp)
-![app-search](storage\app\public\default\screenshots\app-search.webp)
+![app-home](storage/app/public/default/screenshots/app-home.webp)
+![app-home-1](storage/app/public/default/screenshots/app-home-1.webp)
+![app-detail-product](storage/app/public/default/screenshots/app-detail-product.webp)
+![app-search](storage/app/public/default/screenshots/app-search.webp)
 
 ---
 
 ### Admin CMS
-![admin-dashboard](storage\app\public\default\screenshots\admin-dashboard.webp)
-![admin-banner](storage\app\public\default\screenshots\admin-banner.webp)
-![admin-category](storage\app\public\default\screenshots\admin-category.webp)
-![admin-product](storage\app\public\default\screenshots\admin-product.webp)
-![admin-product-section](storage\app\public\default\screenshots\admin-product-section.webp)
+![admin-dashboard](storage/app/public/default/screenshots/admin-dashboard.webp)
+![admin-banner](storage/app/public/default/screenshots/admin-banner.webp)
+![admin-category](storage/app/public/default/screenshots/admin-category.webp)
+![admin-product](storage/app/public/default/screenshots/admin-product.webp)
+![admin-product-section](storage/app/public/default/screenshots/admin-product-section.webp)
