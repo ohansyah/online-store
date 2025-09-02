@@ -10,8 +10,11 @@
             <div class="bg-gray-200 bg-opacity-25" x-data="{
                 selectedProductIds: @entangle('productIds'),
                 selectedProducts: {{ $currentProducts }}
-            }" x-init="console.log(selectedProductIds);
-            console.log(selectedProducts);">
+            }" 
+                x-init="
+                    {{-- console.log(selectedProductIds); --}}
+                    {{-- console.log(selectedProducts); --}}
+                ">
 
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 p-6 sm:p-8">
@@ -40,7 +43,7 @@
                                                             selectedProducts = selectedProducts.filter(p => p.id !== product.id);
                                                         }, 500); // Match the duration of the leave transition
 
-                                                        console.log('Removed', product.id, selectedProductIds);
+                                                        {{-- console.log('Removed', product.id, selectedProductIds); --}}
                                                     "
                                         class="text-red-500 hover:text-white hover:bg-red-500 py-2 px-2 rounded transition-all duration-250 border border-red-500">
                                         @svg('heroicon-s-arrow-right', 'w-5 h-5')
@@ -85,7 +88,7 @@
                                                         price_formatted: '{{ $product->price_formatted }}',
                                                         image_url: '{{ $product->image_url }}'
                                                     });
-                                                    console.log('Added {{ $product->id }}:', selectedProductIds, selectedProducts);
+                                                    {{-- console.log('Added {{ $product->id }}:', selectedProductIds, selectedProducts); --}}
                                                 "
                                         class="text-indigo-500 hover:text-white hover:bg-indigo-500 py-2 px-2 rounded transition-all duration-250 border border-indigo-500">
                                         @svg('heroicon-s-arrow-left', 'w-5 h-5')
@@ -106,13 +109,13 @@
 
                 <div class="px-8 pb-8">
                     <form wire:submit.prevent="save" enctype="multipart/form-data">
-                        <input type="text" wire:model="sectionName"
+                        <input type="hidden" wire:model="sectionName"
                             class="w-full p-2 border border-gray-300 rounded-lg" placeholder="Product Name">
                         @error('sectionName')
                             <span class="text-red-500">{{ $message }}</span>
                         @enderror
 
-                        <input type="text" x-ref="selectedProductsInput" x-model="selectedProductIds"
+                        <input type="hidden" x-ref="selectedProductsInput" x-model="selectedProductIds"
                             wire:model="productIds">
                         @error('productIds')
                             <span class="text-red-500">{{ $message }}</span>
