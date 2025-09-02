@@ -42,6 +42,7 @@ class ProductSectionForm extends Component
             });
 
         $this->availableProducts = Product::select('id', 'name', 'price', 'image')
+            ->active()
             ->limit(8)
             ->get()
             ->map(function ($item) {
@@ -62,8 +63,10 @@ class ProductSectionForm extends Component
         try {
 
             ProductSection::where('section_name', $this->sectionName)->delete();
+
+            $productSectionInserts = [];
             foreach ($this->productIds as $productId) {
-                $productSectionInserts = [
+                $productSectionInserts[] = [
                     'section_name' => $this->sectionName,
                     'product_id' => $productId,
                     'created_at' => now(),
@@ -76,11 +79,11 @@ class ProductSectionForm extends Component
         } catch (\Exception $e) {
             DB::rollBack();
             Session::error(__('error_update') . ' ' . __('product_section') . ' ' . $this->sectionName . '. ' . $e->getMessage());
-            return redirect()->route('admin.product-section.index');
+            return redirect()->route('product-section.index');
         }
 
         Session::success(__('success_update') . ' ' . __('product_section') . ' ' . $this->sectionName);
-        return redirect()->route('admin.product-section.index');
+        return redirect()->route('product-section.index');
     }
 
     public function render()

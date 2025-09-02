@@ -10,11 +10,10 @@
             {{-- 
                 ! Get available product from table products
                 !    Search box to filter available products
-                ! Save button to save the changes
             --}}
 
             <div class="bg-gray-200 bg-opacity-25" x-data="{
-                selectedProductIds: {{ json_encode($currentProducts->pluck('id')) }},
+                selectedProductIds: @entangle('productIds'),
                 selectedProducts: {{ $currentProducts }}
             }" x-init="console.log(selectedProductIds);
             console.log(selectedProducts);">
@@ -96,6 +95,17 @@
                     </div>
 
                     <div class="px-8 pb-8">
+
+                        <input type="text" wire:model="sectionName" class="w-full p-2 border border-gray-300 rounded-lg" placeholder="Product Name">
+                        @error('sectionName') <span class="text-red-500">{{ $message }}</span> @enderror
+
+                        <input 
+                            type="text"
+                            x-ref="selectedProductsInput" 
+                            x-model="selectedProductIds" 
+                            wire:model="productIds">
+                        @error('productIds') <span class="text-red-500">{{ $message }}</span> @enderror
+
                         <button type="submit" class="w-full p-2 bg-blue-500 text-white rounded-lg"
                             wire:loading.class="opacity-50">
                             Save
