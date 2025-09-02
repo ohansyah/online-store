@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Cache;
 
 class Banner extends Model
 {
@@ -17,6 +18,31 @@ class Banner extends Model
         'image',
         'is_active',
     ];
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::created(function () {
+            Cache::forget('banner:list');
+            Cache::forget('banner:slider');
+        });
+
+        static::updated(function () {
+            Cache::forget('banner:list');
+            Cache::forget('banner:slider');
+        });
+
+        static::deleting(function ($category) {
+            $path = storage_path('app/public/' . $category->image);
+            if (file_exists($path)) {
+                unlink($path);
+            }
+
+            Cache::forget('banner:list');
+            Cache::forget('banner:slider');
+        });
+    }
 
     protected $appends = ['image_url'];
 
