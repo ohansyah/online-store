@@ -18,10 +18,21 @@
     "category_edit": "Edit Kategori",
     "category_delete": "Hapus Kategori",
 
+    "banner": "Banner",
+    "banner_add": "Tambah Banner Baru",
+    "banner_edit": "Edit Banner",
+    "banner_delete": "Hapus Banner",
+
     "product": "Produk",
     "product_add": "Tambah Produk Baru",
     "product_edit": "Edit Produk",
     "product_delete": "Hapus Produk",
+
+    "product_section": "Bagian Produk",
+    "product_section_edit": "Edit Bagian Produk",
+
+    "page": "Halaman",
+    "page_edit": "Edit Halaman",
 
     "order": "Order",
     "order_show": "Detail Order",

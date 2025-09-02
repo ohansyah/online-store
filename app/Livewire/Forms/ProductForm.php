@@ -57,7 +57,7 @@ class ProductForm extends Component
 
     public function updatedImage()
     {
-        $this->rules['image'] = 'required|image|mimes:jpeg,png,jpg|max:1024';
+        $this->rules['image'] = 'required|image|mimes:jpeg,png,jpg,webp|max:1024';
         $this->validateOnly('image');
         $this->imagePreview = $this->image->temporaryUrl();
     }
@@ -87,6 +87,6 @@ class ProductForm extends Component
 
     public function render()
     {
-        return view('livewire.product-form');
+        return view('livewire.forms.product-form');
     }
 }
