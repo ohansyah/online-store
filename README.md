@@ -78,16 +78,16 @@ Follow these steps to set up your Laravel 10 project with Jetstream and Vite:
 ---
 
 ### End User
-![app-home](storage\app\public\default\screenshots\app-home.webp)
-![app-home-1](storage\app\public\default\screenshots\app-home-1.webp)
-![app-detail-product](storage\app\public\default\screenshots\app-detail-product.webp)
-![app-search](storage\app\public\default\screenshots\app-search.webp)
+![app-home](storage/app/public/default/screenshots/app-home.webp)
+![app-home-1](storage/app/public/default/screenshots/app-home-1.webp)
+![app-detail-product](storage/app/public/default/screenshots/app-detail-product.webp)
+![app-search](storage/app/public/default/screenshots/app-search.webp)
 
 ---
 
 ### Admin CMS
-![admin-dashboard](storage\app\public\default\screenshots\admin-dashboard.webp)
-![admin-banner](storage\app\public\default\screenshots\admin-banner.webp)
-![admin-category](storage\app\public\default\screenshots\admin-category.webp)
-![admin-product](storage\app\public\default\screenshots\admin-product.webp)
-![admin-product-section](storage\app\public\default\screenshots\admin-product-section.webp)
+![admin-dashboard](storage/app/public/default/screenshots/admin-dashboard.webp)
+![admin-banner](storage/app/public/default/screenshots/admin-banner.webp)
+![admin-category](storage/app/public/default/screenshots/admin-category.webp)
+![admin-product](storage/app/public/default/screenshots/admin-product.webp)
+![admin-product-section](storage/app/public/default/screenshots/admin-product-section.webp)
