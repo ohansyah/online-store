@@ -1,4 +1,4 @@
-![Storefront Screenshot](storage\app\public\default\screenshots\app-collection.webp)
+![Storefront Screenshot](storage/app/public/default/screenshots/app-collection.webp)
 
 [![PHP](https://img.shields.io/badge/PHP-%5E8.2-blue)](https://www.php.net/) [![Laravel](https://img.shields.io/badge/Laravel-%5E11.0-blue)](https://laravel.com/) [![Laravel Jetstream](https://img.shields.io/badge/Laravel_Jetstream-%5E5.1-blue)](https://jetstream.laravel.com/) [![Livewire](https://img.shields.io/badge/Livewire-%5E3.0-blue)](https://laravel-livewire.com/) [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-%5E3.0-blue)](https://tailwindcss.com/) [![Laravel Livewire Tables](https://img.shields.io/badge/Laravel_Livewire_Tables-%5E3.2-blue)](https://github.com/rappasoft/laravel-livewire-tables)
 
