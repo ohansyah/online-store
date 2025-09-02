@@ -3,7 +3,7 @@
         <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
             <div class="p-6 lg:px-8 lg:py-4  bg-white border-b border-gray-200">
                 <h1 class="text-2xl font-medium text-gray-900">
-                    {{__('banner_add')}}
+                    {{__('banner')}}
                 </h1>
             </div>
 

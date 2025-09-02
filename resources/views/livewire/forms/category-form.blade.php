@@ -3,7 +3,7 @@
         <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
             <div class="p-6 lg:px-8 lg:py-4  bg-white border-b border-gray-200">
                 <h1 class="text-2xl font-medium text-gray-900">
-                    {{__('product_add')}}
+                    {{__('category')}}
                 </h1>
             </div>
 
@@ -11,48 +11,22 @@
                 <form wire:submit.prevent="save" enctype="multipart/form-data">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 p-6 lg:p-8">
                         <div>
-
                             <input type="text" wire:model="name" class="w-full p-2 border border-gray-300 rounded-lg"
-                                placeholder="Product Name">
+                                placeholder="Category Name">
                             @error('name') <span class="text-red-500">{{ $message }}</span> @enderror
-
-                            <input type="text" wire:model="sku"
-                                class="w-full p-2 border border-gray-300 rounded-lg mt-2" placeholder="Product SKU">
-                            @error('sku') <span class="text-red-500">{{ $message }}</span> @enderror
-
-                            <input type="text" wire:model="barcode"
-                                class="w-full p-2 border border-gray-300 rounded-lg mt-2" placeholder="Product Barcode">
-                            @error('barcode') <span class="text-red-500">{{ $message }}</span> @enderror
-
-                            <input type="number" min="1" wire:model="price"
-                                class="w-full p-2 border border-gray-300 rounded-lg mt-2" placeholder="Product Price">
-                            @error('price') <span class="text-red-500">{{ $message }}</span> @enderror
-
-                            <select wire:model="category_id" class="w-full p-2 border border-gray-300 rounded-lg mt-2">
-                                <option selected value="">Select Category</option>
-                                @foreach ($categories as $category)
-                                <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                @endforeach
-                            </select>
 
                             <select wire:model="is_active" class="w-full p-2 border border-gray-300 rounded-lg mt-2">
                                 <option selected value=1>Active</option>
                                 <option value=0>Inactive</option>
                             </select>
                             @error('is_active') <span class="text-red-500">{{ $message }}</span> @enderror
+
+                            <input type="file" wire:model="image"
+                                class="w-full p-2 border border-gray-300 rounded-lg mt-2">
+                            @error('image') <span class="text-red-500">{{ $message }}</span> @enderror
                         </div>
 
                         <div>
-
-                            <textarea wire:model="description" rows="5"
-                                class="w-full p-2 border border-gray-300 rounded-lg"
-                                placeholder="Product Description"></textarea>
-                            @error('description') <span class="text-red-500">{{ $message }}</span> @enderror
-
-
-                            <input type="file" wire:model="image" class="w-full p-2 border border-gray-300 rounded-lg">
-                            @error('image') <span class="text-red-500">{{ $message }}</span> @enderror
-
                             <div wire:loading wire:target='image'>Uploading Image</div>
                             @if ($imagePreview)
                             <div class="w-full p-2 border border-gray-300 rounded-lg mt-2">
@@ -60,7 +34,6 @@
                             </div>
                             @endif
                         </div>
-
                         <button type="submit" class="w-full p-2 bg-blue-500 text-white rounded-lg mt-2"
                             wire:loading.class="opacity-50">
                             Save
