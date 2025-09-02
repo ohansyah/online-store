@@ -9,6 +9,8 @@
 !default/categories/*
 !default/products/
 !default/products/*
+!default/screenshots/
+!default/screenshots/*
 !logo/
 !logo/*
 !.gitignore
