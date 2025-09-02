@@ -7,13 +7,17 @@ use App\Models\ProductSection;
 use App\Services\Session;
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
+use App\Services\ProductService;
 
 class ProductSectionForm extends Component
 {
     public string $sectionName;
     public array $productIds = [];
     public $currentProducts = [];
+    
+    // section available products
     public $availableProducts = [];
+    public string $searchQuery = '';
 
     protected $rules = [
         'sectionName' => 'required|in:popular,discount',
@@ -40,8 +44,14 @@ class ProductSectionForm extends Component
                     'price_formatted' => $item->price_formatted,
                 ];
             });
+    }
 
+    public function loadProduct()
+    {
         $this->availableProducts = Product::select('id', 'name', 'price', 'image')
+            ->when($this->searchQuery, function ($query) {
+                $query->where('name', 'like', '%' . $this->searchQuery . '%');
+            })
             ->active()
             ->limit(8)
             ->get()
@@ -82,12 +92,13 @@ class ProductSectionForm extends Component
             return redirect()->route('product-section.index');
         }
 
-        Session::success(__('success_update') . ' ' . __('product_section') . ' ' . $this->sectionName);
+        Session::success(__('success_edit') . ' ' . __('product_section') . ' ' . $this->sectionName);
         return redirect()->route('product-section.index');
     }
 
     public function render()
     {
+        $this->loadProduct();
         return view('livewire.forms.product-section-form');
     }
 }

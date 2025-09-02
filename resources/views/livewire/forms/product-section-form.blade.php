@@ -7,18 +7,13 @@
                 </h1>
             </div>
 
-            {{-- 
-                ! Get available product from table products
-                !    Search box to filter available products
-            --}}
-
             <div class="bg-gray-200 bg-opacity-25" x-data="{
                 selectedProductIds: @entangle('productIds'),
                 selectedProducts: {{ $currentProducts }}
             }" x-init="console.log(selectedProductIds);
             console.log(selectedProducts);">
 
-                <form wire:submit.prevent="save" enctype="multipart/form-data">
+                
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 p-6 sm:p-8">
                         <div>
                             <ul class="list bg-base-100 rounded-box shadow-md">
@@ -60,6 +55,20 @@
                             <ul class="list bg-base-100 rounded-box shadow-md">
                                 <li class="p-4 pb-2 text-lg text-brand-darkest tracking-wide justify-items-end">
                                     Available Products</li>
+
+                                {{-- Search --}}
+                                <div class="grid items-center p-4">
+                                    <div class="flex justify-center">
+                                        <div class="w-full relative">
+                                            <span class="absolute left-4 top-1/2 -translate-y-1/2 text-brand-lighter">
+                                                <x-heroicon-s-magnifying-glass class="w-5 h-5" />
+                                            </span>
+                                            <input wire:model.live='searchQuery' type="search" id="search" placeholder="Search..."
+                                                class="w-full rounded-full border-2 border-brand-lightest text-base font-medium text-brand-darkest p-2 pl-12 focus:border-brand-lighter focus:ring-1 focus:ring-brand-lighter focus:outline-none transition-transform duration-300 ease-out">
+                                        </div>
+                                    </div>
+                                </div>
+
                                 @foreach ($availableProducts as $product)
                                     <li class="list-row" x-show="!selectedProductIds.includes({{ $product->id }})"
                                         x-transition:leave="transition ease-in duration-500"
@@ -95,7 +104,7 @@
                     </div>
 
                     <div class="px-8 pb-8">
-
+                        <form wire:submit.prevent="save" enctype="multipart/form-data">
                         <input type="text" wire:model="sectionName" class="w-full p-2 border border-gray-300 rounded-lg" placeholder="Product Name">
                         @error('sectionName') <span class="text-red-500">{{ $message }}</span> @enderror
 
@@ -110,10 +119,9 @@
                             wire:loading.class="opacity-50">
                             Save
                         </button>
+                    </form>
                     </div>
-                </form>
             </div>
-
         </div>
     </div>
 </div>
