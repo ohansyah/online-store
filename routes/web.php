@@ -1,26 +1,26 @@
 <?php
 
+use App\Http\Controllers\BannerController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GeneralSettingController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\BannerController;
 use App\Livewire\AppHome;
-use App\Livewire\Category;
+use App\Livewire\App\Banner as AppBanner;
+use App\Livewire\App\BannerDetail as AppBannerDetail;
+use App\Livewire\App\Page as AppPage;
+use App\Livewire\App\Product as AppProduct;
+use App\Livewire\App\ProductDetail;
 use App\Livewire\Banner;
-use App\Livewire\Page;
-use App\Livewire\Forms\CategoryForm;
+use App\Livewire\Category;
 use App\Livewire\Forms\BannerForm;
-use App\Livewire\Forms\ProductForm;
+use App\Livewire\Forms\CategoryForm;
 use App\Livewire\Forms\PageForm;
+use App\Livewire\Forms\ProductForm;
 use App\Livewire\Forms\ProductSectionForm;
+use App\Livewire\Page;
 use App\Livewire\Product;
 use App\Livewire\ProductSection;
-use App\Livewire\App\ProductDetail;
-use App\Livewire\App\Product as AppProduct;
-use App\Livewire\App\BannerDetail as AppBannerDetail;
-use App\Livewire\App\Banner as AppBanner;
-use App\Livewire\App\Page as AppPage;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware([
