@@ -15,7 +15,8 @@ class BannerController extends Controller
             $banner->delete();
             Session::success(__('success_delete') . ' ' . __('banner').' '. $banner->name);
         } catch (\Throwable $th) {
-            Session::failed(__('failed_delete') . ' ' . __('banner'). '. ' . $th->getMessage());
+            if (config('app.debug')) {throw $th;}
+            Session::failed(__('failed_delete') . ' ' . __('banner'));
         }
         return redirect()->route('banner.index');
     }

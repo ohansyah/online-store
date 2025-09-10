@@ -15,7 +15,8 @@ class ProductController extends Controller
             $product->delete();
             Session::success(__('success_delete') . ' ' . __('product').' '. $product->name);
         } catch (\Throwable $th) {
-            Session::failed(__('failed_delete') . ' ' . __('product'). '. ' . $th->getMessage());
+            if (config('app.debug')) {throw $th;}
+            Session::failed(__('failed_delete') . ' ' . __('product'));
         }
         return redirect()->route('product.index');
     }
