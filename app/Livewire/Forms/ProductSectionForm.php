@@ -88,7 +88,8 @@ class ProductSectionForm extends Component
             DB::commit();
         } catch (\Exception $e) {
             DB::rollBack();
-            Session::error(__('error_update') . ' ' . __('product_section') . ' ' . $this->sectionName . '. ' . $e->getMessage());
+            if (config('app.debug')) {throw $e;}
+            Session::error(__('error_update') . ' ' . __('product_section') . ' ' . $this->sectionName);
             return redirect()->route('product-section.index');
         }
 

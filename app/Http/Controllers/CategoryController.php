@@ -14,7 +14,8 @@ class CategoryController extends Controller
             $category->delete();
             Session::success(__('success_delete') . ' ' . __('category').' '. $category->name);
         } catch (\Throwable $th) {
-            Session::failed(__('failed_delete') . ' ' . __('category'). '. ' . $th->getMessage());
+            if (config('app.debug')) {throw $th;}
+            Session::failed(__('failed_delete') . ' ' . __('category'));
         }
         return redirect()->route('category.index');
     }
